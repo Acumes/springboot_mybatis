@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.htf.mapper.UserMapper">
+    <!--开启二级缓存-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+    <resultMap id="BaseResultMap" type="com.htf.entity.User" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="VARCHAR" />
+        <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+        <result column="english_name" property="englishName" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="VARCHAR" />
+        <result column="mobile" property="mobile" jdbcType="VARCHAR" />
+    </resultMap>
+    <!--根据id查询用户详情-->
+    <sql id="Base_Column_List" >
+        id, username, password, email, nick_name,english_name,mobile,gender,status
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM user WHERE id=#{id}
+    </select>
+
+    <select id="list" resultMap="BaseResultMap">
+        select * from user
+    </select>
+    <insert id="insert" parameterType="com.htf.entity.User">
+        insert into USER (ID, ENGLISH_NAME,
+        NICK_NAME, EMAIL, GENDER, MOBILE, REMARK,
+        PHOTO, STATUS,
+        CREATE_DATE, CREATOR,PASSWORD,USERNAME)
+        values (#{id,jdbcType=VARCHAR}, #{englishName, jdbcType=VARCHAR},
+        #{nickName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR},
+        #{mobile,jdbcType=VARCHAR},
+        #{remark,jdbcType=VARCHAR},
+        #{photo,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
+        SYSDATE(), #{creator,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR}
+        ,#{username,jdbcType=VARCHAR})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.htf.entity.User">
+        update USER
+        <set>
+            <if test="englishName != null">
+                ENGLISH_NAME = #{englishName,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null">
+                USERNAME = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                NICK_NAME = #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                GENDER = #{gender,jdbcType=TINYINT},
+            </if>
+            <if test="password != null">
+                PASSWORD = #{password,jdbcType=TINYINT},
+            </if>
+            <if test="email != null">
+                EMAIL = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                MOBILE = #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                REMARK = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="photo != null">
+                PHOTO = #{photo,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                STATUS = #{status,jdbcType=TINYINT},
+            </if>
+            <if test="modifier != null">
+                MODIFIER = #{modifier,jdbcType=TINYINT},
+            </if>
+            MODIFY_DATE = SYSDATE()
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <delete id="deleteByPrimaryKey">
+       DELETE  FROM USER WHERE id = #{id,jdbcType=VARCHAR}
+    </delete>
+</mapper>

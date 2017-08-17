@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.htf.mapper.UserRoleRelMapper">
+    <!--开启二级缓存-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+    <resultMap id="BaseResultMap" type="com.htf.entity.UserRoleRel" >
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="user_id" property="userId" jdbcType="VARCHAR" />
+        <result column="role_id" property="roleId" jdbcType="VARCHAR" />
+    </resultMap>
+    <!--根据id查询用户详情-->
+    <sql id="Base_Column_List" >
+        id, user_id,role_id
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM USER_ROLE_REL WHERE user_id=#{userId}
+    </select>
+    <select id="getByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM USER_ROLE_REL WHERE user_id=#{userId}
+    </select>
+
+    <select id="list" resultMap="BaseResultMap">
+        select * from USER_ROLE_REL
+    </select>
+    <insert id="insert" parameterType="com.htf.entity.User">
+        insert into USER_ROLE_REL (ID, USER_ID,ROLE_ID)
+        values (#{id,jdbcType=VARCHAR}, #{userId, jdbcType=VARCHAR},
+        #{roleId,jdbcType=VARCHAR})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.htf.entity.User">
+        update USER
+        <set>
+            <if test="englishName != null">
+                ENGLISH_NAME = #{englishName,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null">
+                USERNAME = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                NICK_NAME = #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                GENDER = #{gender,jdbcType=TINYINT},
+            </if>
+            <if test="password != null">
+                PASSWORD = #{password,jdbcType=TINYINT},
+            </if>
+            <if test="email != null">
+                EMAIL = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                MOBILE = #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                REMARK = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="photo != null">
+                PHOTO = #{photo,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                STATUS = #{status,jdbcType=TINYINT},
+            </if>
+            <if test="modifier != null">
+                MODIFIER = #{modifier,jdbcType=TINYINT},
+            </if>
+            MODIFY_DATE = SYSDATE()
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+      DELETE FROM USER_ROLE_REL WHERE id = #{id,jdbcType=VARCHAR}
+    </delete>
+    <delete id="delByUserId" parameterType="java.lang.String">
+        DELETE FROM USER_ROLE_REL WHERE user_id = #{userId,jdbcType=VARCHAR}
+    </delete>
+    <delete id="delByRoleId" parameterType="java.lang.String">
+        DELETE FROM USER_ROLE_REL WHERE role_id = #{roleId,jdbcType=VARCHAR}
+    </delete>
+</mapper>

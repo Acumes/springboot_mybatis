@@ -1,0 +1,35 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Bower
+
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+
+
+# front end
+!/FronEnd/src/components
+/FronEnd/node_modules/
+npm-debug.log*
+/FronEnd/yarn-debug.log*
+/FronEnd/yarn-error.log*
+/FronEnd/test/unit/coverage
+/FronEnd/test/e2e/reports
+/FronEnd/selenium-debug.lo
