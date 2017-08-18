@@ -1,7 +1,9 @@
 package com.htf.service.impl;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.google.common.base.Strings;
 import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.RoleToUserResponse;
 import com.htf.controller.response.UserResponse;
@@ -12,6 +14,8 @@ import com.htf.exception.ExceptionResponse;
 import com.htf.mapper.RoleMapper;
 import com.htf.mapper.UserMapper;
 import com.htf.mapper.UserRoleRelMapper;
+import com.htf.util.FilterAndOrder;
+import com.htf.util.PagesInfo;
 import com.htf.util.UUIDGenerator;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.BeanUtils;
@@ -55,15 +59,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageInfo list(Integer page, Integer pageSize) {
-        if(page!= null && pageSize!= null){
-            PageHelper.startPage(page, pageSize);
-        }
-        List<User> list = userMapper.list();
-        return new PageInfo(list);
-    }
-
-    @Override
     public void addUser(UserRequest request) {
         User user = this.toUser(request);
         //处理角色
@@ -93,6 +88,11 @@ public class UserServiceImpl implements UserService {
     public void delUser(String id) {
         userMapper.deleteByPrimaryKey(id);
         userRoleRelMapper.delByUserId(id);
+    }
+
+    @Override
+    public PageInfo<UserResponse> list(PagesInfo<UserResponse> pi, FilterAndOrder fao, String roleId, String groupId) {
+        return null;
     }
 
     private User toUser(UserRequest request) {

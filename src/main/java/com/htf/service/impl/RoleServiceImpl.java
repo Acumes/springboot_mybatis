@@ -5,9 +5,13 @@ import com.htf.controller.response.RoleCascadeResponse;
 import com.htf.controller.response.RoleResponse;
 import com.htf.controller.response.RoleSubResponse;
 import com.htf.controller.response.RoleToUserResponse;
+import com.htf.entity.Menu;
 import com.htf.entity.Role;
+import com.htf.entity.RoleMenuRel;
 import com.htf.exception.ExceptionResponse;
+import com.htf.mapper.MenuMapper;
 import com.htf.mapper.RoleMapper;
+import com.htf.mapper.RoleMenuRelMapper;
 import com.htf.mapper.UserRoleRelMapper;
 import com.htf.util.UUIDGenerator;
 import org.springframework.beans.BeanUtils;
@@ -27,6 +31,10 @@ public class RoleServiceImpl implements RoleService {
     private RoleMapper roleMapper;
     @Resource
     private UserRoleRelMapper userRoleRelMapper;
+    @Resource
+    private MenuMapper menuMapper;
+    @Resource
+    private RoleMenuRelMapper roleMenuRelMapper;
 
     @Override
     public Role findById(String id) {
@@ -37,14 +45,32 @@ public class RoleServiceImpl implements RoleService {
     public void addRole(RoleRequest request) {
         request.setId(UUIDGenerator.creatUUID());
         Role role = this.toRole(request);
+        //处理与菜单绑定
+        if(request.getMenus() != null && request.getMenus().size() > 0){
+            this.disposeRoleMenuRel(request.getMenus(),role.getId());
+        }
         roleMapper.insert(role);
+    }
+
+    private void disposeRoleMenuRel(List<Menu> menus, String roleId) {
+        menus.forEach(item -> {
+            Menu menu = menuMapper.selectByPrimaryKey(item.getId());
+            if(menu == null){
+                throw new ExceptionResponse(item.getName() + ">>> 没有找到这个菜单");
+            }
+            RoleMenuRel roleMenuRel = new RoleMenuRel();
+            roleMenuRel.setId(UUIDGenerator.creatUUID());
+            roleMenuRel.setRoleId(roleId);
+            roleMenuRel.setMenuId(item.getId());
+            roleMenuRelMapper.insert(roleMenuRel);
+        });
     }
 
     @Override
     public RoleResponse getRole(String id) {
         Role role = roleMapper.selectByPrimaryKey(id);
         if(role == null){
-            throw new ExceptionResponse("没用这个角色");
+            throw new ExceptionResponse("没有这个角色");
         }
         RoleResponse roleResponse = new RoleResponse();
         BeanUtils.copyProperties(role,roleResponse);
@@ -55,9 +81,15 @@ public class RoleServiceImpl implements RoleService {
     public void updateRole(RoleRequest request) {
         Role role = roleMapper.selectByPrimaryKey(request.getId());
         if(role == null){
-            throw new ExceptionResponse("没用这个角色");
+            throw new ExceptionResponse("没有这个角色");
         }
         role = toRole(request);
+
+        //菜单相关
+        roleMenuRelMapper.delByRoleId(request.getId());
+        if(request.getMenus().size() > 0){
+            this.disposeRoleMenuRel(request.getMenus(),request.getId());
+        }
         roleMapper.updateByPrimaryKey(role);
     }
 
@@ -65,6 +97,7 @@ public class RoleServiceImpl implements RoleService {
     public void delRole(String id) {
         roleMapper.deleteByPrimaryKey(id);
         userRoleRelMapper.delByRoleId(id);
+        roleMenuRelMapper.delByRoleId(id);
     }
 
     @Override
@@ -99,19 +132,41 @@ public class RoleServiceImpl implements RoleService {
         return responses;
     }
 
+    /**
+     * 以后修改递归方法
+     * @return
+     */
     @Override
     public List<RoleCascadeResponse> findAdllRoleBeltCascade() {
         List<RoleSubResponse> roleSubResponses = this.getSubRoles();
         List<RoleCascadeResponse> roleCascadeResponses = new ArrayList<>();
-        roleCascadeResponses = this.convert(roleSubResponses);
+        roleSubResponses.forEach(item -> {
+            RoleCascadeResponse roleCascadeResponse = new RoleCascadeResponse();
+            BeanUtils.copyProperties(item,roleCascadeResponse);
+            if(item.isHasNextLevel()){
+                List<RoleSubResponse> childs = this.getChildRoles(item.getId());
+                List<RoleCascadeResponse> roleCascadeResponseChilds = new ArrayList<>();
+                childs.forEach(child -> {
+                    RoleCascadeResponse roleCascadeResponseChild = new RoleCascadeResponse();
+                    BeanUtils.copyProperties(child,roleCascadeResponseChild);
+                    if(child.isHasNextLevel()){
+                        List<RoleSubResponse> childs_ = this.getChildRoles(child.getId());
+                        List<RoleCascadeResponse> roleCascadeResponseChilds_ = new ArrayList<>();
+                        childs_.forEach(child_ -> {
+                            RoleCascadeResponse roleCascadeResponseChild_ = new RoleCascadeResponse();
+                            List<RoleCascadeResponse> roleCascadeResponseChilds_s = new ArrayList<>();
+                            BeanUtils.copyProperties(child_,roleCascadeResponseChild_);
+                            roleCascadeResponseChilds_.add(roleCascadeResponseChild_);
+                        });
+                        roleCascadeResponseChild.setChild(roleCascadeResponseChilds_);
+                    }
+                    roleCascadeResponseChilds.add(roleCascadeResponseChild);
+                });
+                roleCascadeResponse.setChild(roleCascadeResponseChilds);
+            }
+            roleCascadeResponses.add(roleCascadeResponse);
+        });
         return roleCascadeResponses;
-    }
-
-    private List<RoleCascadeResponse> convert(List<RoleSubResponse> roleSubResponses) {
-
-
-
-        return null;
     }
 
     private Role toRole(RoleRequest request) {

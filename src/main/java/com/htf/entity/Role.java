@@ -7,6 +7,11 @@ import java.util.Date;
  * Created by PC-FENG on 2017/8/17.
  */
 public class Role extends BaseEntity implements Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     private String name;
     //负责人
     private String principal;

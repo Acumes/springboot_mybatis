@@ -8,7 +8,7 @@ import java.util.List;
 public class RoleCascadeResponse {
     private String id;
     private String name;
-    private List<RoleToUserResponse> child;
+    private List<RoleCascadeResponse> child;
 
     public String getId() {
         return id;
@@ -26,11 +26,11 @@ public class RoleCascadeResponse {
         this.name = name;
     }
 
-    public List<RoleToUserResponse> getChild() {
+    public List<RoleCascadeResponse> getChild() {
         return child;
     }
 
-    public void setChild(List<RoleToUserResponse> child) {
+    public void setChild(List<RoleCascadeResponse> child) {
         this.child = child;
     }
 }

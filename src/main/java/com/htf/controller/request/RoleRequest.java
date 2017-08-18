@@ -1,5 +1,9 @@
 package com.htf.controller.request;
 
+import com.htf.entity.Menu;
+
+import java.util.List;
+
 /**
  * Created by PC-FENG on 2017/8/17.
  */
@@ -10,6 +14,7 @@ public class RoleRequest {
     private String principal;
     private String description;
     private String parentId;
+    private List<Menu> menus;
 
     public String getId() {
         return id;
@@ -49,5 +54,13 @@ public class RoleRequest {
 
     public void setParentId(String parentId) {
         this.parentId = parentId;
+    }
+
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
     }
 }

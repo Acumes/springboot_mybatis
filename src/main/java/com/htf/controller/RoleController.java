@@ -32,7 +32,7 @@ public class RoleController {
     }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
-    @ApiOperation(value = "添加角色")
+    @ApiOperation(value = "获取角色")
     public RoleResponse getRole(@PathVariable String id){
         return roleService.getRole(id);
     }
@@ -66,7 +66,7 @@ public class RoleController {
     }
 
     @RequestMapping(value = "/all_cascade", method = RequestMethod.GET)
-    @ApiOperation(value = "获取所有角色带级联", notes = "获取所有角色带级联")
+    @ApiOperation(value = "获取角色树", notes = "获取所有角色带级联")
     public List<RoleCascadeResponse> findAdllRoleBeltCascade() {
         return roleService.findAdllRoleBeltCascade();
     }

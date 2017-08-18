@@ -1,9 +1,13 @@
 package com.htf.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.UserResponse;
 import com.htf.service.UserService;
+import com.htf.util.FilterAndOrder;
+import com.htf.util.FilterOrderAndPage;
+import com.htf.util.PagesInfo;
 import com.htf.util.UUIDGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -22,11 +26,25 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/query/{pageIndex}/{pageSize}",method = RequestMethod.GET)
-    public PageInfo query(@PathVariable Integer pageIndex, @PathVariable Integer pageSize) {
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
+    public PageInfo<UserResponse> list(@RequestParam(value = "foap",required = false) String foap,
+                                        @RequestParam(value = "roleId",required = false) String roleId,
+                                        @RequestParam(value = "groupId",required = false) String groupId) {
+        FilterOrderAndPage foapObj = JSONObject.parseObject(foap, FilterOrderAndPage.class);
+        System.out.println();
+        PagesInfo<UserResponse> pi = null;
+        FilterAndOrder fao = null;
+        if (null != foapObj) {
+            fao = foapObj.getFao();
+            pi = foapObj.getPage();
+        }
 
-        PageInfo  page= userService.list(pageIndex,pageSize);
-        return page;
+        if (null == pi) { // 设置默认值
+            pi = new PagesInfo<UserResponse>();
+            pi.setPageNum(1);
+            pi.setPageSize(10);
+        }
+        return userService.list(pi,fao,roleId,groupId);
     }
 
     @ApiOperation(value = "添加用户",notes = "根据请求参数添加用户")

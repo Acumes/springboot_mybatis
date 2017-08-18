@@ -7,6 +7,11 @@ import java.io.Serializable;
  * Created by PC-FENG on 2017/8/17.
  */
 public class User extends BaseEntity implements Serializable{
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     private String username;
     private String password;
     private String gender;
