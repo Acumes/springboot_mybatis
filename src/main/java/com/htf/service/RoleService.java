@@ -29,4 +29,6 @@ public interface RoleService {
     List<RoleToUserResponse> findAllRole();
 
     List<RoleCascadeResponse> findAdllRoleBeltCascade();
+
+    List<RoleCascadeResponse> findAdllRoleBeltCascade_();
 }

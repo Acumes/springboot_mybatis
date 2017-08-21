@@ -70,6 +70,11 @@ public class RoleController {
     public List<RoleCascadeResponse> findAdllRoleBeltCascade() {
         return roleService.findAdllRoleBeltCascade();
     }
+    @RequestMapping(value = "/all_cascade_", method = RequestMethod.GET)
+    @ApiOperation(value = "获取角色树", notes = "获取所有角色带级联")
+    public List<RoleCascadeResponse> findAdllRoleBeltCascade_() {
+        return roleService.findAdllRoleBeltCascade_();
+    }
 
 
 }

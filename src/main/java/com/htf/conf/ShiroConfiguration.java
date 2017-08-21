@@ -44,7 +44,7 @@ public class ShiroConfiguration {
         ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
         shiroFilter.setSecurityManager(securityManager);
         shiroFilter.setLoginUrl("/auth.html");
-        shiroFilter.setUnauthorizedUrl("/404.html");
+        shiroFilter.setUnauthorizedUrl("/403.html");
 
         Map<String, String> filterMap = new LinkedHashMap<>();
         //开放swagger资源 start

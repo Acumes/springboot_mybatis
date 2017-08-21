@@ -133,7 +133,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     /**
-     * 以后修改递归方法
+     * 以后修改递归方法 已解决
      * @return
      */
     @Override
@@ -167,6 +167,30 @@ public class RoleServiceImpl implements RoleService {
             roleCascadeResponses.add(roleCascadeResponse);
         });
         return roleCascadeResponses;
+    }
+
+    @Override
+    public List<RoleCascadeResponse> findAdllRoleBeltCascade_() {
+        List<RoleSubResponse> roleSubResponses = this.getSubRoles();
+        List<RoleCascadeResponse> roleCascadeResponses = new ArrayList<>();
+        for(RoleSubResponse r: roleSubResponses){
+            getChildGroup(r,roleCascadeResponses);
+        }
+        return roleCascadeResponses;
+    }
+
+    private void getChildGroup(RoleSubResponse item,List<RoleCascadeResponse> roleCascadeResponses) {
+            RoleCascadeResponse roleCascadeResponse = new RoleCascadeResponse();
+            BeanUtils.copyProperties(item,roleCascadeResponse);
+            List<RoleCascadeResponse> roleCascadeResponseChilds = new ArrayList<>();
+            if(item.isHasNextLevel()){
+                List<RoleSubResponse> childs = this.getChildRoles(item.getId());
+                for(RoleSubResponse r: childs){
+                    this.getChildGroup(r,roleCascadeResponseChilds);
+                }
+                roleCascadeResponse.setChild(roleCascadeResponseChilds);
+            }
+            roleCascadeResponses.add(roleCascadeResponse);
     }
 
     private Role toRole(RoleRequest request) {
