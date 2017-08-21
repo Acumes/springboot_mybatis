@@ -65,6 +65,7 @@ public class LoginController {
         return ResultResponse.ok();
     }
 
+    //test
     @RequestMapping(value = "/getCurrentUser",method = RequestMethod.GET)
     @ApiOperation(value = "当前用户",notes = "当前用户")
     public User getCurrentUser() {
@@ -75,7 +76,4 @@ public class LoginController {
         }
         return user;
     }
-
-
-
 }
