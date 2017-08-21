@@ -15,6 +15,7 @@
 # Maven
 logs/
 logs/**
+logs/**/**
 target/
 
 # Bower
