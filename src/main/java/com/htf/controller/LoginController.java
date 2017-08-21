@@ -1,6 +1,7 @@
 package com.htf.controller;
 
 import com.htf.controller.response.ResultResponse;
+import com.htf.entity.User;
 import com.htf.service.MenuService;
 import com.htf.service.UserService;
 import com.htf.util.ShiroUtils;
@@ -56,5 +57,25 @@ public class LoginController {
         }
         return ResultResponse.ok();
     }
+
+    @RequestMapping(value = "/logout",method = RequestMethod.GET)
+    @ApiOperation(value = "用户退出",notes = "用户退出")
+    public ResultResponse logout() {
+        ShiroUtils.logout();
+        return ResultResponse.ok();
+    }
+
+    @RequestMapping(value = "/getCurrentUser",method = RequestMethod.GET)
+    @ApiOperation(value = "当前用户",notes = "当前用户")
+    public User getCurrentUser() {
+        User user = ShiroUtils.getUser();
+        if(user == null){
+            user = new User();
+            user.setId("asdasdsa");
+        }
+        return user;
+    }
+
+
 
 }

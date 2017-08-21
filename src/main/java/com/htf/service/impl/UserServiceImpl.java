@@ -16,6 +16,7 @@ import com.htf.mapper.UserMapper;
 import com.htf.mapper.UserRoleRelMapper;
 import com.htf.util.FilterAndOrder;
 import com.htf.util.PagesInfo;
+import com.htf.util.ShiroUtils;
 import com.htf.util.UUIDGenerator;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.BeanUtils;
@@ -65,6 +66,8 @@ public class UserServiceImpl implements UserService {
         if(request.getRoles().size() > 0){
             this.disposeUserRoleRel(request.getRoles(),user.getId());
         }
+//        User getCurrentUser
+        user.setCreator(ShiroUtils.getUserId());
         userMapper.insert(user);
     }
 
@@ -81,6 +84,7 @@ public class UserServiceImpl implements UserService {
         if(request.getRoles().size() > 0){
             this.disposeUserRoleRel(request.getRoles(),user.getId());
         }
+        user.setModifier(ShiroUtils.getUserId());
         userMapper.updateByPrimaryKey(user);
     }
 

@@ -47,11 +47,19 @@ public class ShiroConfiguration {
         shiroFilter.setUnauthorizedUrl("/404.html");
 
         Map<String, String> filterMap = new LinkedHashMap<>();
-
+        //开放swagger资源 start
+        filterMap.put("/v2/api-docs", "anon");
+        filterMap.put("/webjars/**", "anon");
+        filterMap.put("/swagger-resources/**", "anon");
+        filterMap.put("/swagger-ui.html", "anon");
+        //开放swagger资源 end
         filterMap.put("/api/**", "anon");
         filterMap.put("/assets/**", "anon");
         filterMap.put("/fonts/**", "anon");
         filterMap.put("/maps/**", "anon");
+        filterMap.put("/api/_devops_/init", "anon");
+        filterMap.put("/configuration/ui", "anon");
+        filterMap.put("/configuration/security", "anon");
         filterMap.put("/scripts/**", "anon");
         filterMap.put("/styles/**", "anon");
         filterMap.put("/auth.html", "anon");
