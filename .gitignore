@@ -13,9 +13,6 @@
 .DS_Store
 
 # Maven
-logs/
-logs/**
-logs/**/**
 target/
 
 # Bower
@@ -36,3 +33,5 @@ npm-debug.log*
 /FronEnd/test/unit/coverage
 /FronEnd/test/e2e/reports
 /FronEnd/selenium-debug.lo
+#log start
+logs/
