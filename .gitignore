@@ -35,3 +35,4 @@ npm-debug.log*
 /FronEnd/selenium-debug.lo
 #log start
 /logs/loging.log/*.log
+*.log
