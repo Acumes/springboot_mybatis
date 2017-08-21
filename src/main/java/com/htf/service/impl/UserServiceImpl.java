@@ -95,6 +95,11 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public User findByUserName(String username) {
+        return userMapper.findByUserName(username);
+    }
+
     private User toUser(UserRequest request) {
         User user = new User();
         BeanUtils.copyProperties(request,user);

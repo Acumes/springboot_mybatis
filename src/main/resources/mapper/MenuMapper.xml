@@ -81,4 +81,25 @@
         WHERE PARENTID = #{parentId,jdbcType=VARCHAR}
     </select>
 
+    <select id="getPermissions" resultType="String">
+        SELECT m.name
+        FROM MENU m, ROLE_MENU_REL rm, USER_ROLE_REL ur
+        WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id
+        AND ur.user_id = #{value}
+        GROUP BY m.id
+        UNION
+        SELECT sm.name;
+        FROM MENU m, ROLE_MENU_REL rm, USER_ROLE_REL ur, MENU sm
+        WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id AND m.parent_id = sm.id
+        AND ur.user_id = #{value}
+        GROUP BY sm.id
+        UNION
+        SELECT sm.name
+        FROM MENU m, ROLE_MENU_REL rm, USER_ROLE_REL ur, MENU psm, MENU sm
+        WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id
+        AND m.parent_id = psm.id AND psm.parent_id = sm.id
+        AND ur.user_id = #{value}
+        GROUP BY sm.id
+    </select>
+
 </mapper>

@@ -50,26 +50,25 @@ public class ShiroRealm extends AuthorizingRealm {
         String password = new String((char[]) authenticationToken.getCredentials());
 
         //查询用户信息
-//        SysUser user = sysUserService.findByUserName(username);
+        User user = userService.findByUserName(username);
 //
 //        //账号不存在
-//        if(user == null) {
-//            throw new UnknownAccountException("用户名不正确");
-//        }
+        if(user == null) {
+            throw new UnknownAccountException("用户名不正确");
+        }
 //
 //        //密码错误
-//        if(!password.equals(user.getPassword())) {
-//            throw new IncorrectCredentialsException("用户名或密码不正确");
-//        }
+        if(!password.equals(user.getPassword())) {
+            throw new IncorrectCredentialsException("密码不正确");
+        }
 //
 //        //账号禁用
-//        if("0".equals(user.getStatus())){
-//            throw new LockedAccountException("用户已被禁用,请联系管理员");
-//        }
+        if("0".equals(user.getStatus())){
+            throw new LockedAccountException("用户已被禁用,请联系管理员");
+        }
 
-//        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user, password, getName());
-//        return info;
-        return null;
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user, password, getName());
+        return info;
     }
 
 }

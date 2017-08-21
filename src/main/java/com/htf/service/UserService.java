@@ -19,4 +19,6 @@ public interface UserService {
     void delUser(String id);
 
     PageInfo<UserResponse> list(PagesInfo<UserResponse> pi, FilterAndOrder fao, String roleId, String groupId);
+
+    User findByUserName(String username);
 }

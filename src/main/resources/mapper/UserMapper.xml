@@ -82,4 +82,10 @@
     <delete id="deleteByPrimaryKey">
        DELETE  FROM USER WHERE id = #{id,jdbcType=VARCHAR}
     </delete>
+
+    <select id="findByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM user WHERE username=#{username}
+    </select>
 </mapper>

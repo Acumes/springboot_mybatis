@@ -11251,3 +11251,568 @@ com.htf.exception.ExceptionResponse: 没有找到相应用户
 	Application 'htf admin' is running! Access URLs:
 	Local: 		http://localhost:9000
 ----------------------------------------------------------
+2017-08-21 10:03:17.142  INFO 7476 --- [restartedMain] com.htf.Application                      : Starting Application on DESKTOP-I1K3041 with PID 7476 (G:\study\springboot_mybatis\target\classes started by PC-FENG in G:\study\springboot_mybatis)
+2017-08-21 10:03:17.225  INFO 7476 --- [restartedMain] com.htf.Application                      : No active profile set, falling back to default profiles: default
+2017-08-21 10:03:17.495  INFO 7476 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6aef2356: startup date [Mon Aug 21 10:03:17 CST 2017]; root of context hierarchy
+2017-08-21 10:03:19.291  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [com.htf.conf.ShiroConfiguration$$EnhancerBySpringCGLIB$$f3a3e8d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:19.385  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidDataSourceConfig' of type [com.htf.conf.DruidDataSourceConfig$$EnhancerBySpringCGLIB$$e6dfe4c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:19.780  INFO 7476 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2017-08-21 10:03:19.806  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:19.806  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisConfig' of type [com.htf.conf.MybatisConfig$$EnhancerBySpringCGLIB$$b3351310] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.164 DEBUG 7476 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from ehcache.xml found in the classpath: file:/G:/study/springboot_mybatis/target/classes/ehcache.xml
+2017-08-21 10:03:20.164 DEBUG 7476 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from URL: file:/G:/study/springboot_mybatis/target/classes/ehcache.xml
+2017-08-21 10:03:20.165 DEBUG 7476 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from InputStream
+2017-08-21 10:03:20.229 DEBUG 7476 --- [restartedMain] net.sf.ehcache.config.BeanHandler        : Ignoring ehcache attribute xmlns:xsi
+2017-08-21 10:03:20.229 DEBUG 7476 --- [restartedMain] net.sf.ehcache.config.BeanHandler        : Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-08-21 10:03:20.230 DEBUG 7476 --- [restartedMain] n.s.e.config.DiskStoreConfiguration      : Disk Store Path: E:\test
+2017-08-21 10:03:20.240 DEBUG 7476 --- [restartedMain] net.sf.ehcache.CacheManager              : Creating new CacheManager with default config
+2017-08-21 10:03:20.244 DEBUG 7476 --- [restartedMain] net.sf.ehcache.util.PropertyUtil         : propertiesString is null.
+2017-08-21 10:03:20.251 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheManagerEventListenerFactory class specified. Skipping...
+2017-08-21 10:03:20.435 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-21 10:03:20.436 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : CacheWriter factory not configured. Skipping...
+2017-08-21 10:03:20.438 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-21 10:03:20.447 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-21 10:03:20.448 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : CacheWriter factory not configured. Skipping...
+2017-08-21 10:03:20.448 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-21 10:03:20.463 DEBUG 7476 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for hello
+2017-08-21 10:03:20.481 DEBUG 7476 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : Using diskstore path E:\test
+2017-08-21 10:03:20.482 DEBUG 7476 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : Holding exclusive lock on E:\test\.ehcache-diskstore.lock
+2017-08-21 10:03:20.483 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file hello.index
+2017-08-21 10:03:20.502 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\hello.index
+2017-08-21 10:03:20.502 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file hello.index
+2017-08-21 10:03:20.508 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: hello
+2017-08-21 10:03:20.509 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured. Skipping for 'hello'.
+2017-08-21 10:03:20.509 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'hello'.
+2017-08-21 10:03:20.511 DEBUG 7476 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.MenuMapper
+2017-08-21 10:03:20.529 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:03:20.530 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:03:20.530 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:03:20.531 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.MenuMapper
+2017-08-21 10:03:20.531 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.MenuMapper'.
+2017-08-21 10:03:20.635 DEBUG 7476 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.RoleMapper
+2017-08-21 10:03:20.637 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:03:20.638 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:03:20.638 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:03:20.638 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.RoleMapper
+2017-08-21 10:03:20.638 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.RoleMapper'.
+2017-08-21 10:03:20.658 DEBUG 7476 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.RoleMenuRelMapper
+2017-08-21 10:03:20.660 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:03:20.661 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:03:20.661 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:03:20.662 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.RoleMenuRelMapper
+2017-08-21 10:03:20.662 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.RoleMenuRelMapper'.
+2017-08-21 10:03:20.676 DEBUG 7476 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.UserMapper
+2017-08-21 10:03:20.677 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:03:20.678 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:03:20.678 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:03:20.678 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.UserMapper
+2017-08-21 10:03:20.678 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.UserMapper'.
+2017-08-21 10:03:20.730 DEBUG 7476 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.UserRoleRelMapper
+2017-08-21 10:03:20.733 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:03:20.735 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:03:20.736 DEBUG 7476 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:03:20.736 DEBUG 7476 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.UserRoleRelMapper
+2017-08-21 10:03:20.736 DEBUG 7476 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.UserRoleRelMapper'.
+2017-08-21 10:03:20.744  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.755  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.756  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.757  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.758  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.759  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.761  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleRelMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.761  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleRelMapper' of type [com.sun.proxy.$Proxy62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.762  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userService' of type [com.htf.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.769  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.770  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuMapper' of type [com.sun.proxy.$Proxy64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.772  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMenuRelMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.773  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMenuRelMapper' of type [com.sun.proxy.$Proxy65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.773  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuService' of type [com.htf.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.774  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroRealm' of type [com.htf.conf.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:20.819  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:21.120  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:21.240  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:21.257  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:21.262  INFO 7476 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$594183ff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:03:21.820  INFO 7476 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2017-08-21 10:03:21.828  INFO 7476 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-08-21 10:03:21.829  INFO 7476 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-08-21 10:03:21.931  INFO 7476 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-08-21 10:03:21.931  INFO 7476 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4439 ms
+2017-08-21 10:03:22.216  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2017-08-21 10:03:22.217  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-21 10:03:22.220  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-21 10:03:22.220  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-21 10:03:22.220  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-21 10:03:22.220  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-21 10:03:22.221  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2017-08-21 10:03:22.221  INFO 7476 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2017-08-21 10:03:23.012  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu/{id}],methods=[GET]}" onto public com.htf.controller.response.MenuResponse com.htf.controller.MenuController.getMenu(java.lang.String)
+2017-08-21 10:03:23.013  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu],methods=[PUT]}" onto public void com.htf.controller.MenuController.updateMenu(com.htf.controller.request.MenuRequest)
+2017-08-21 10:03:23.013  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu],methods=[POST]}" onto public void com.htf.controller.MenuController.addMenu(com.htf.controller.request.MenuRequest)
+2017-08-21 10:03:23.013  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu/{id}],methods=[DELETE]}" onto public void com.htf.controller.MenuController.delMenu(java.lang.String)
+2017-08-21 10:03:23.015  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/{id}],methods=[GET]}" onto public com.htf.controller.response.RoleResponse com.htf.controller.RoleController.getRole(java.lang.String)
+2017-08-21 10:03:23.016  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role],methods=[POST]}" onto public void com.htf.controller.RoleController.addRole(com.htf.controller.request.RoleRequest)
+2017-08-21 10:03:23.016  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/sub_roles],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleSubResponse> com.htf.controller.RoleController.getSubRoles()
+2017-08-21 10:03:23.017  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/child/{id}],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleSubResponse> com.htf.controller.RoleController.getChildRoles(java.lang.String)
+2017-08-21 10:03:23.017  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/all],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleToUserResponse> com.htf.controller.RoleController.findAllRole()
+2017-08-21 10:03:23.017  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/{id}],methods=[DELETE]}" onto public void com.htf.controller.RoleController.delRole(java.lang.String)
+2017-08-21 10:03:23.017  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role],methods=[PUT]}" onto public void com.htf.controller.RoleController.updateRole(com.htf.controller.request.RoleRequest)
+2017-08-21 10:03:23.018  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/all_cascade],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleCascadeResponse> com.htf.controller.RoleController.findAdllRoleBeltCascade()
+2017-08-21 10:03:23.021  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/list],methods=[GET]}" onto public com.github.pagehelper.PageInfo<com.htf.controller.response.UserResponse> com.htf.controller.UserController.list(java.lang.String,java.lang.String,java.lang.String)
+2017-08-21 10:03:23.021  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[GET]}" onto public com.htf.controller.response.UserResponse com.htf.controller.UserController.getUserInfo(java.lang.String)
+2017-08-21 10:03:23.022  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user],methods=[POST]}" onto public void com.htf.controller.UserController.addUser(com.htf.controller.request.UserRequest)
+2017-08-21 10:03:23.022  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[DELETE]}" onto public void com.htf.controller.UserController.delUser(java.lang.String)
+2017-08-21 10:03:23.022  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user],methods=[PUT]}" onto public void com.htf.controller.UserController.updateUser(com.htf.controller.request.UserRequest)
+2017-08-21 10:03:23.023  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2017-08-21 10:03:23.025  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2017-08-21 10:03:23.027  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2017-08-21 10:03:23.029  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2017-08-21 10:03:23.032  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-21 10:03:23.032  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-21 10:03:23.624  INFO 7476 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6aef2356: startup date [Mon Aug 21 10:03:17 CST 2017]; root of context hierarchy
+2017-08-21 10:03:23.752  INFO 7476 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:03:23.752  INFO 7476 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:03:23.856  INFO 7476 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:03:24.914  WARN 7476 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2017-08-21 10:03:25.074  INFO 7476 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-21 10:03:25.075  INFO 7476 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-08-21 10:03:25.081  INFO 7476 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-08-21 10:03:25.084  INFO 7476 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-08-21 10:03:25.084  INFO 7476 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2017-08-21 10:03:25.117  INFO 7476 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2017-08-21 10:03:25.127  INFO 7476 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2017-08-21 10:03:25.223  WARN 7476 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:03:25.269  WARN 7476 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:03:25.272  WARN 7476 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:03:25.333  WARN 7476 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:03:25.415  INFO 7476 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2017-08-21 10:03:25.421  INFO 7476 --- [restartedMain] com.htf.Application                      : Started Application in 8.72 seconds (JVM running for 9.404)
+2017-08-21 10:03:25.421  INFO 7476 --- [restartedMain] com.htf.Application                      : 
+----------------------------------------------------------
+	Application 'htf admin' is running! Access URLs:
+	Local: 		http://localhost:9000
+----------------------------------------------------------
+2017-08-21 10:06:00.899  INFO 7476 --- [http-nio-9000-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-21 10:06:00.899  INFO 7476 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-21 10:06:00.921  INFO 7476 --- [http-nio-9000-exec-4] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2017-08-21 10:06:01.047  INFO 7476 --- [http-nio-9000-exec-4] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2017-08-21 10:10:27.718  INFO 26092 --- [restartedMain] com.htf.Application                      : Starting Application on DESKTOP-I1K3041 with PID 26092 (G:\study\springboot_mybatis\target\classes started by PC-FENG in G:\study\springboot_mybatis)
+2017-08-21 10:10:27.719  INFO 26092 --- [restartedMain] com.htf.Application                      : No active profile set, falling back to default profiles: default
+2017-08-21 10:10:27.966  INFO 26092 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ec7c66d: startup date [Mon Aug 21 10:10:27 CST 2017]; root of context hierarchy
+2017-08-21 10:10:29.318  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [com.htf.conf.ShiroConfiguration$$EnhancerBySpringCGLIB$$69308435] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:29.407  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidDataSourceConfig' of type [com.htf.conf.DruidDataSourceConfig$$EnhancerBySpringCGLIB$$5c6c8027] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:29.637  INFO 26092 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2017-08-21 10:10:29.659  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:29.660  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisConfig' of type [com.htf.conf.MybatisConfig$$EnhancerBySpringCGLIB$$28c1ae73] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:29.795 DEBUG 26092 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from ehcache.xml found in the classpath: file:/G:/study/springboot_mybatis/target/classes/ehcache.xml
+2017-08-21 10:10:29.795 DEBUG 26092 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from URL: file:/G:/study/springboot_mybatis/target/classes/ehcache.xml
+2017-08-21 10:10:29.796 DEBUG 26092 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from InputStream
+2017-08-21 10:10:29.806 DEBUG 26092 --- [restartedMain] net.sf.ehcache.config.BeanHandler        : Ignoring ehcache attribute xmlns:xsi
+2017-08-21 10:10:29.806 DEBUG 26092 --- [restartedMain] net.sf.ehcache.config.BeanHandler        : Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-08-21 10:10:29.807 DEBUG 26092 --- [restartedMain] n.s.e.config.DiskStoreConfiguration      : Disk Store Path: E:\test
+2017-08-21 10:10:29.817 DEBUG 26092 --- [restartedMain] net.sf.ehcache.CacheManager              : Creating new CacheManager with default config
+2017-08-21 10:10:29.821 DEBUG 26092 --- [restartedMain] net.sf.ehcache.util.PropertyUtil         : propertiesString is null.
+2017-08-21 10:10:29.828 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheManagerEventListenerFactory class specified. Skipping...
+2017-08-21 10:10:29.929 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-21 10:10:29.929 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : CacheWriter factory not configured. Skipping...
+2017-08-21 10:10:29.930 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-21 10:10:29.935 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-21 10:10:29.936 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : CacheWriter factory not configured. Skipping...
+2017-08-21 10:10:29.936 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-21 10:10:29.949 DEBUG 26092 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for hello
+2017-08-21 10:10:29.958 DEBUG 26092 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : Using diskstore path E:\test
+2017-08-21 10:10:29.958 DEBUG 26092 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : Holding exclusive lock on E:\test\.ehcache-diskstore.lock
+2017-08-21 10:10:29.959 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file hello.index
+2017-08-21 10:10:29.965 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\hello.index
+2017-08-21 10:10:29.965 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file hello.index
+2017-08-21 10:10:29.973 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: hello
+2017-08-21 10:10:29.973 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured. Skipping for 'hello'.
+2017-08-21 10:10:29.973 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'hello'.
+2017-08-21 10:10:29.976 DEBUG 26092 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.MenuMapper
+2017-08-21 10:10:29.977 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:10:29.979 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:10:29.979 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:10:29.980 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.MenuMapper
+2017-08-21 10:10:29.980 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.MenuMapper'.
+2017-08-21 10:10:30.036 DEBUG 26092 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.RoleMapper
+2017-08-21 10:10:30.037 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:10:30.038 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:10:30.039 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:10:30.039 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.RoleMapper
+2017-08-21 10:10:30.039 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.RoleMapper'.
+2017-08-21 10:10:30.053 DEBUG 26092 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.RoleMenuRelMapper
+2017-08-21 10:10:30.054 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:10:30.055 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:10:30.056 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:10:30.056 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.RoleMenuRelMapper
+2017-08-21 10:10:30.056 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.RoleMenuRelMapper'.
+2017-08-21 10:10:30.067 DEBUG 26092 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.UserMapper
+2017-08-21 10:10:30.068 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:10:30.071 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:10:30.071 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:10:30.071 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.UserMapper
+2017-08-21 10:10:30.071 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.UserMapper'.
+2017-08-21 10:10:30.085 DEBUG 26092 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.UserRoleRelMapper
+2017-08-21 10:10:30.087 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:10:30.088 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:10:30.088 DEBUG 26092 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:10:30.089 DEBUG 26092 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.UserRoleRelMapper
+2017-08-21 10:10:30.089 DEBUG 26092 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.UserRoleRelMapper'.
+2017-08-21 10:10:30.096  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.106  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.106  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.108  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.110  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.110  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.112  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleRelMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.112  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleRelMapper' of type [com.sun.proxy.$Proxy62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.113  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userService' of type [com.htf.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.119  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.119  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuMapper' of type [com.sun.proxy.$Proxy64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.122  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMenuRelMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.123  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMenuRelMapper' of type [com.sun.proxy.$Proxy65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.123  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuService' of type [com.htf.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.124  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroRealm' of type [com.htf.conf.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.143  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.355  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.463  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.485  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.490  INFO 26092 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cece1f62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:10:30.943  INFO 26092 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2017-08-21 10:10:30.951  INFO 26092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-08-21 10:10:30.954  INFO 26092 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-08-21 10:10:31.030  INFO 26092 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-08-21 10:10:31.031  INFO 26092 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3067 ms
+2017-08-21 10:10:31.309  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2017-08-21 10:10:31.310  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-21 10:10:31.313  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-21 10:10:31.313  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-21 10:10:31.314  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-21 10:10:31.314  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-21 10:10:31.314  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2017-08-21 10:10:31.315  INFO 26092 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2017-08-21 10:10:32.007  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/login],methods=[POST]}" onto public com.htf.controller.response.ResultResponse com.htf.controller.LoginController.login(java.util.Map<java.lang.String, java.lang.String>)
+2017-08-21 10:10:32.009  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu/{id}],methods=[GET]}" onto public com.htf.controller.response.MenuResponse com.htf.controller.MenuController.getMenu(java.lang.String)
+2017-08-21 10:10:32.010  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu],methods=[POST]}" onto public void com.htf.controller.MenuController.addMenu(com.htf.controller.request.MenuRequest)
+2017-08-21 10:10:32.010  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu],methods=[PUT]}" onto public void com.htf.controller.MenuController.updateMenu(com.htf.controller.request.MenuRequest)
+2017-08-21 10:10:32.010  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu/{id}],methods=[DELETE]}" onto public void com.htf.controller.MenuController.delMenu(java.lang.String)
+2017-08-21 10:10:32.012  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/{id}],methods=[GET]}" onto public com.htf.controller.response.RoleResponse com.htf.controller.RoleController.getRole(java.lang.String)
+2017-08-21 10:10:32.013  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role],methods=[POST]}" onto public void com.htf.controller.RoleController.addRole(com.htf.controller.request.RoleRequest)
+2017-08-21 10:10:32.013  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/all_cascade],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleCascadeResponse> com.htf.controller.RoleController.findAdllRoleBeltCascade()
+2017-08-21 10:10:32.014  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role],methods=[PUT]}" onto public void com.htf.controller.RoleController.updateRole(com.htf.controller.request.RoleRequest)
+2017-08-21 10:10:32.014  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/{id}],methods=[DELETE]}" onto public void com.htf.controller.RoleController.delRole(java.lang.String)
+2017-08-21 10:10:32.014  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/sub_roles],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleSubResponse> com.htf.controller.RoleController.getSubRoles()
+2017-08-21 10:10:32.014  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/all],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleToUserResponse> com.htf.controller.RoleController.findAllRole()
+2017-08-21 10:10:32.015  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/child/{id}],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleSubResponse> com.htf.controller.RoleController.getChildRoles(java.lang.String)
+2017-08-21 10:10:32.019  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/list],methods=[GET]}" onto public com.github.pagehelper.PageInfo<com.htf.controller.response.UserResponse> com.htf.controller.UserController.list(java.lang.String,java.lang.String,java.lang.String)
+2017-08-21 10:10:32.020  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[GET]}" onto public com.htf.controller.response.UserResponse com.htf.controller.UserController.getUserInfo(java.lang.String)
+2017-08-21 10:10:32.020  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user],methods=[POST]}" onto public void com.htf.controller.UserController.addUser(com.htf.controller.request.UserRequest)
+2017-08-21 10:10:32.020  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user],methods=[PUT]}" onto public void com.htf.controller.UserController.updateUser(com.htf.controller.request.UserRequest)
+2017-08-21 10:10:32.021  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[DELETE]}" onto public void com.htf.controller.UserController.delUser(java.lang.String)
+2017-08-21 10:10:32.022  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2017-08-21 10:10:32.025  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2017-08-21 10:10:32.026  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2017-08-21 10:10:32.027  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2017-08-21 10:10:32.030  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-21 10:10:32.030  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-21 10:10:32.599  INFO 26092 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ec7c66d: startup date [Mon Aug 21 10:10:27 CST 2017]; root of context hierarchy
+2017-08-21 10:10:32.737  INFO 26092 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:10:32.738  INFO 26092 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:10:32.855  INFO 26092 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:10:33.660  WARN 26092 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2017-08-21 10:10:33.825  INFO 26092 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-21 10:10:33.826  INFO 26092 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-08-21 10:10:33.832  INFO 26092 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-08-21 10:10:33.835  INFO 26092 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-08-21 10:10:33.835  INFO 26092 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2017-08-21 10:10:33.851  INFO 26092 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2017-08-21 10:10:33.861  INFO 26092 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2017-08-21 10:10:33.950  WARN 26092 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:10:33.993  WARN 26092 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:10:34.001  WARN 26092 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:10:34.002  WARN 26092 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:10:34.043  WARN 26092 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:10:34.122  INFO 26092 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2017-08-21 10:10:34.127  INFO 26092 --- [restartedMain] com.htf.Application                      : Started Application in 6.674 seconds (JVM running for 7.272)
+2017-08-21 10:10:34.127  INFO 26092 --- [restartedMain] com.htf.Application                      : 
+----------------------------------------------------------
+	Application 'htf admin' is running! Access URLs:
+	Local: 		http://localhost:9000
+----------------------------------------------------------
+2017-08-21 10:10:44.531  INFO 26092 --- [http-nio-9000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-21 10:10:44.532  INFO 26092 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-21 10:10:44.552  INFO 26092 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2017-08-21 10:10:44.566  INFO 26092 --- [http-nio-9000-exec-2] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2017-08-21 10:10:44.692 DEBUG 26092 --- [http-nio-9000-exec-2] com.htf.mapper.UserMapper                : Cache Hit Ratio [com.htf.mapper.UserMapper]: 0.0
+2017-08-21 10:10:44.711 DEBUG 26092 --- [http-nio-9000-exec-2] c.htf.mapper.UserMapper.findByUserName   : ==>  Preparing: SELECT id, username, password, email, nick_name,english_name,mobile,gender,status FROM user WHERE username=? 
+2017-08-21 10:10:44.830 DEBUG 26092 --- [http-nio-9000-exec-2] c.htf.mapper.UserMapper.findByUserName   : ==> Parameters: admin(String)
+2017-08-21 10:10:44.844 TRACE 26092 --- [http-nio-9000-exec-2] c.htf.mapper.UserMapper.findByUserName   : <==    Columns: id, username, password, email, nick_name, english_name, mobile, gender, status
+2017-08-21 10:10:44.844 TRACE 26092 --- [http-nio-9000-exec-2] c.htf.mapper.UserMapper.findByUserName   : <==        Row: ecea08c54a7a42b0819690a3f26f78fc, admin, 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918, admin@qq.com, admin, admin, 15820356452, 1, 1
+2017-08-21 10:10:44.846 DEBUG 26092 --- [http-nio-9000-exec-2] c.htf.mapper.UserMapper.findByUserName   : <==      Total: 1
+2017-08-21 10:10:44.849 DEBUG 26092 --- [http-nio-9000-exec-2] net.sf.ehcache.store.disk.Segment        : put added 0 on heap
+2017-08-21 10:10:44.877 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault removed 0 from heap
+2017-08-21 10:10:44.877 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault added 0 on disk
+2017-08-21 10:10:52.044 DEBUG 26092 --- [http-nio-9000-exec-3] com.htf.mapper.UserMapper                : Cache Hit Ratio [com.htf.mapper.UserMapper]: 0.5
+2017-08-21 10:11:09.126 DEBUG 26092 --- [http-nio-9000-exec-1] com.htf.mapper.UserMapper                : Cache Hit Ratio [com.htf.mapper.UserMapper]: 0.3333333333333333
+2017-08-21 10:11:09.126 DEBUG 26092 --- [http-nio-9000-exec-1] c.h.m.UserMapper.selectByPrimaryKey      : ==>  Preparing: SELECT id, username, password, email, nick_name,english_name,mobile,gender,status FROM user WHERE id=? 
+2017-08-21 10:11:09.127 DEBUG 26092 --- [http-nio-9000-exec-1] c.h.m.UserMapper.selectByPrimaryKey      : ==> Parameters: 402882015dd59f0f015dd5a25d150004(String)
+2017-08-21 10:11:09.128 DEBUG 26092 --- [http-nio-9000-exec-1] c.h.m.UserMapper.selectByPrimaryKey      : <==      Total: 0
+2017-08-21 10:11:09.129 DEBUG 26092 --- [http-nio-9000-exec-1] net.sf.ehcache.store.disk.Segment        : put added 0 on heap
+2017-08-21 10:11:09.129 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault removed 0 from heap
+2017-08-21 10:11:09.129 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault added 0 on disk
+2017-08-21 10:11:09.191 ERROR 26092 --- [http-nio-9000-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Source must not be null] with root cause
+
+java.lang.IllegalArgumentException: Source must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:134) ~[spring-core-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.BeanUtils.copyProperties(BeanUtils.java:591) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.beans.BeanUtils.copyProperties(BeanUtils.java:537) ~[spring-beans-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at com.htf.service.impl.UserServiceImpl.findById(UserServiceImpl.java:44) ~[classes/:na]
+	at com.htf.controller.UserController.getUserInfo(UserController.java:61) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90) ~[shiro-core-1.4.0.jar:1.4.0]
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83) ~[shiro-core-1.4.0.jar:1.4.0]
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:387) ~[shiro-core-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125) ~[shiro-web-1.4.0.jar:1.4.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) ~[druid-1.0.29.jar:1.0.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.9.RELEASE.jar:4.3.9.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.15.jar:8.5.15]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2017-08-21 10:11:20.442 DEBUG 26092 --- [http-nio-9000-exec-4] com.htf.mapper.UserMapper                : Cache Hit Ratio [com.htf.mapper.UserMapper]: 0.25
+2017-08-21 10:11:20.442 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.UserMapper.selectByPrimaryKey      : ==>  Preparing: SELECT id, username, password, email, nick_name,english_name,mobile,gender,status FROM user WHERE id=? 
+2017-08-21 10:11:20.443 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.UserMapper.selectByPrimaryKey      : ==> Parameters: ecea08c54a7a42b0819690a3f26f78fc(String)
+2017-08-21 10:11:20.444 TRACE 26092 --- [http-nio-9000-exec-4] c.h.m.UserMapper.selectByPrimaryKey      : <==    Columns: id, username, password, email, nick_name, english_name, mobile, gender, status
+2017-08-21 10:11:20.444 TRACE 26092 --- [http-nio-9000-exec-4] c.h.m.UserMapper.selectByPrimaryKey      : <==        Row: ecea08c54a7a42b0819690a3f26f78fc, admin, 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918, admin@qq.com, admin, admin, 15820356452, 1, 1
+2017-08-21 10:11:20.445 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.UserMapper.selectByPrimaryKey      : <==      Total: 1
+2017-08-21 10:11:20.445 DEBUG 26092 --- [http-nio-9000-exec-4] net.sf.ehcache.store.disk.Segment        : put added 0 on heap
+2017-08-21 10:11:20.447 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault removed 0 from heap
+2017-08-21 10:11:20.447 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault added 0 on disk
+2017-08-21 10:11:20.452 DEBUG 26092 --- [http-nio-9000-exec-4] com.htf.mapper.UserRoleRelMapper         : Cache Hit Ratio [com.htf.mapper.UserRoleRelMapper]: 0.0
+2017-08-21 10:11:20.452 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.UserRoleRelMapper.getByUserId      : ==>  Preparing: SELECT id, user_id,role_id FROM USER_ROLE_REL WHERE user_id=? 
+2017-08-21 10:11:20.453 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.UserRoleRelMapper.getByUserId      : ==> Parameters: ecea08c54a7a42b0819690a3f26f78fc(String)
+2017-08-21 10:11:20.453 TRACE 26092 --- [http-nio-9000-exec-4] c.h.m.UserRoleRelMapper.getByUserId      : <==    Columns: id, user_id, role_id
+2017-08-21 10:11:20.454 TRACE 26092 --- [http-nio-9000-exec-4] c.h.m.UserRoleRelMapper.getByUserId      : <==        Row: f6dd0ab70f964ca98eb07b7d456962d2, ecea08c54a7a42b0819690a3f26f78fc, ead38789355740ff82b683c2687a6323
+2017-08-21 10:11:20.454 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.UserRoleRelMapper.getByUserId      : <==      Total: 1
+2017-08-21 10:11:20.454 DEBUG 26092 --- [http-nio-9000-exec-4] net.sf.ehcache.store.disk.Segment        : put added 0 on heap
+2017-08-21 10:11:20.455 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault removed 0 from heap
+2017-08-21 10:11:20.455 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault added 0 on disk
+2017-08-21 10:11:20.456 DEBUG 26092 --- [http-nio-9000-exec-4] com.htf.mapper.RoleMapper                : Cache Hit Ratio [com.htf.mapper.RoleMapper]: 0.0
+2017-08-21 10:11:20.460 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.RoleMapper.selectByPrimaryKey      : ==>  Preparing: SELECT id, name, description, parentId, principal FROM role WHERE id=? 
+2017-08-21 10:11:20.461 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.RoleMapper.selectByPrimaryKey      : ==> Parameters: ead38789355740ff82b683c2687a6323(String)
+2017-08-21 10:11:20.462 TRACE 26092 --- [http-nio-9000-exec-4] c.h.m.RoleMapper.selectByPrimaryKey      : <==    Columns: id, name, description, parentId, principal
+2017-08-21 10:11:20.462 TRACE 26092 --- [http-nio-9000-exec-4] c.h.m.RoleMapper.selectByPrimaryKey      : <==        Row: ead38789355740ff82b683c2687a6323, 管理员, 管理员, null, ecea08c54a7a42b0819690a3f26f78fc
+2017-08-21 10:11:20.462 DEBUG 26092 --- [http-nio-9000-exec-4] c.h.m.RoleMapper.selectByPrimaryKey      : <==      Total: 1
+2017-08-21 10:11:20.462 DEBUG 26092 --- [http-nio-9000-exec-4] net.sf.ehcache.store.disk.Segment        : put added 0 on heap
+2017-08-21 10:11:20.463 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0052ole%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault removed 0 from heap
+2017-08-21 10:11:20.463 DEBUG 26092 --- [com%002ehtf%002emapper%002e%0052ole%004dapper.data] net.sf.ehcache.store.disk.Segment        : fault added 0 on disk
+2017-08-21 10:11:38.229  INFO 28748 --- [restartedMain] com.htf.Application                      : Starting Application on DESKTOP-I1K3041 with PID 28748 (G:\study\springboot_mybatis\target\classes started by PC-FENG in G:\study\springboot_mybatis)
+2017-08-21 10:11:38.230  INFO 28748 --- [restartedMain] com.htf.Application                      : No active profile set, falling back to default profiles: default
+2017-08-21 10:11:38.454  INFO 28748 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ec7c66d: startup date [Mon Aug 21 10:11:38 CST 2017]; root of context hierarchy
+2017-08-21 10:11:39.840  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfiguration' of type [com.htf.conf.ShiroConfiguration$$EnhancerBySpringCGLIB$$8d0053f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:39.934  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidDataSourceConfig' of type [com.htf.conf.DruidDataSourceConfig$$EnhancerBySpringCGLIB$$803c4fe7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.194  INFO 28748 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2017-08-21 10:11:40.215  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.alibaba.druid.pool.DruidDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.215  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'mybatisConfig' of type [com.htf.conf.MybatisConfig$$EnhancerBySpringCGLIB$$4c917e33] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.338 DEBUG 28748 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from ehcache.xml found in the classpath: file:/G:/study/springboot_mybatis/target/classes/ehcache.xml
+2017-08-21 10:11:40.339 DEBUG 28748 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from URL: file:/G:/study/springboot_mybatis/target/classes/ehcache.xml
+2017-08-21 10:11:40.339 DEBUG 28748 --- [restartedMain] n.s.ehcache.config.ConfigurationFactory  : Configuring ehcache from InputStream
+2017-08-21 10:11:40.349 DEBUG 28748 --- [restartedMain] net.sf.ehcache.config.BeanHandler        : Ignoring ehcache attribute xmlns:xsi
+2017-08-21 10:11:40.349 DEBUG 28748 --- [restartedMain] net.sf.ehcache.config.BeanHandler        : Ignoring ehcache attribute xsi:noNamespaceSchemaLocation
+2017-08-21 10:11:40.350 DEBUG 28748 --- [restartedMain] n.s.e.config.DiskStoreConfiguration      : Disk Store Path: E:\test
+2017-08-21 10:11:40.359 DEBUG 28748 --- [restartedMain] net.sf.ehcache.CacheManager              : Creating new CacheManager with default config
+2017-08-21 10:11:40.363 DEBUG 28748 --- [restartedMain] net.sf.ehcache.util.PropertyUtil         : propertiesString is null.
+2017-08-21 10:11:40.370 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheManagerEventListenerFactory class specified. Skipping...
+2017-08-21 10:11:40.473 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-21 10:11:40.473 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : CacheWriter factory not configured. Skipping...
+2017-08-21 10:11:40.473 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-21 10:11:40.479 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : No BootstrapCacheLoaderFactory class specified. Skipping...
+2017-08-21 10:11:40.479 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : CacheWriter factory not configured. Skipping...
+2017-08-21 10:11:40.479 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : No CacheExceptionHandlerFactory class specified. Skipping...
+2017-08-21 10:11:40.499 DEBUG 28748 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for hello
+2017-08-21 10:11:40.508 DEBUG 28748 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : Using diskstore path E:\test
+2017-08-21 10:11:40.508 DEBUG 28748 --- [restartedMain] net.sf.ehcache.DiskStorePathManager      : Holding exclusive lock on E:\test\.ehcache-diskstore.lock
+2017-08-21 10:11:40.510 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file hello.index
+2017-08-21 10:11:40.517 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\hello.index
+2017-08-21 10:11:40.517 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file hello.index
+2017-08-21 10:11:40.525 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: hello
+2017-08-21 10:11:40.525 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured. Skipping for 'hello'.
+2017-08-21 10:11:40.525 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'hello'.
+2017-08-21 10:11:40.528 DEBUG 28748 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.MenuMapper
+2017-08-21 10:11:40.529 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:11:40.531 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:11:40.531 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%004denu%004dapper.index
+2017-08-21 10:11:40.531 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.MenuMapper
+2017-08-21 10:11:40.531 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.MenuMapper'.
+2017-08-21 10:11:40.587 DEBUG 28748 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.RoleMapper
+2017-08-21 10:11:40.588 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:11:40.589 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:11:40.589 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004dapper.index
+2017-08-21 10:11:40.590 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.RoleMapper
+2017-08-21 10:11:40.590 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.RoleMapper'.
+2017-08-21 10:11:40.605 DEBUG 28748 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.RoleMenuRelMapper
+2017-08-21 10:11:40.606 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:11:40.608 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:11:40.608 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0052ole%004denu%0052el%004dapper.index
+2017-08-21 10:11:40.608 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.RoleMenuRelMapper
+2017-08-21 10:11:40.608 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.RoleMenuRelMapper'.
+2017-08-21 10:11:40.620 DEBUG 28748 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.UserMapper
+2017-08-21 10:11:40.621 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:11:40.622 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:11:40.623 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%004dapper.index
+2017-08-21 10:11:40.623 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.UserMapper
+2017-08-21 10:11:40.623 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.UserMapper'.
+2017-08-21 10:11:40.632 DEBUG 28748 --- [restartedMain] net.sf.ehcache.store.MemoryStore         : Initialized net.sf.ehcache.store.MemoryStore for com.htf.mapper.UserRoleRelMapper
+2017-08-21 10:11:40.633 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:11:40.634 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Matching data file missing (or empty) for index file. Deleting index file E:\test\com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:11:40.634 DEBUG 28748 --- [restartedMain] n.s.e.store.disk.DiskStorageFactory      : Failed to delete file com%002ehtf%002emapper%002e%0055ser%0052ole%0052el%004dapper.index
+2017-08-21 10:11:40.635 DEBUG 28748 --- [restartedMain] net.sf.ehcache.Cache                     : Initialised cache: com.htf.mapper.UserRoleRelMapper
+2017-08-21 10:11:40.635 DEBUG 28748 --- [restartedMain] n.sf.ehcache.config.ConfigurationHelper  : CacheDecoratorFactory not configured for defaultCache. Skipping for 'com.htf.mapper.UserRoleRelMapper'.
+2017-08-21 10:11:40.643  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.654  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.654  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.655  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.657  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.658  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.660  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleRelMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.660  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userRoleRelMapper' of type [com.sun.proxy.$Proxy62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.661  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'userService' of type [com.htf.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.667  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.668  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuMapper' of type [com.sun.proxy.$Proxy64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.670  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMenuRelMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.671  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'roleMenuRelMapper' of type [com.sun.proxy.$Proxy65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.671  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'menuService' of type [com.htf.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.671  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'shiroRealm' of type [com.htf.conf.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.690  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'sessionManager' of type [org.apache.shiro.web.session.mgt.DefaultWebSessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:40.910  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:41.009  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'transactionManager' of type [org.springframework.jdbc.datasource.DataSourceTransactionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:41.024  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:41.029  INFO 28748 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f29def22] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-21 10:11:41.464  INFO 28748 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9000 (http)
+2017-08-21 10:11:41.471  INFO 28748 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-08-21 10:11:41.472  INFO 28748 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.15
+2017-08-21 10:11:41.565  INFO 28748 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-08-21 10:11:41.565  INFO 28748 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3114 ms
+2017-08-21 10:11:41.839  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'statViewServlet' to [/druid/*]
+2017-08-21 10:11:41.841  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-21 10:11:41.843  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-21 10:11:41.844  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-21 10:11:41.844  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-21 10:11:41.844  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-21 10:11:41.844  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2017-08-21 10:11:41.844  INFO 28748 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'shirFilter' to: [/*]
+2017-08-21 10:11:42.541  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/login],methods=[POST]}" onto public com.htf.controller.response.ResultResponse com.htf.controller.LoginController.login(java.util.Map<java.lang.String, java.lang.String>)
+2017-08-21 10:11:42.543  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu],methods=[POST]}" onto public void com.htf.controller.MenuController.addMenu(com.htf.controller.request.MenuRequest)
+2017-08-21 10:11:42.543  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu],methods=[PUT]}" onto public void com.htf.controller.MenuController.updateMenu(com.htf.controller.request.MenuRequest)
+2017-08-21 10:11:42.543  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu/{id}],methods=[DELETE]}" onto public void com.htf.controller.MenuController.delMenu(java.lang.String)
+2017-08-21 10:11:42.544  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/menu/{id}],methods=[GET]}" onto public com.htf.controller.response.MenuResponse com.htf.controller.MenuController.getMenu(java.lang.String)
+2017-08-21 10:11:42.547  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/{id}],methods=[GET]}" onto public com.htf.controller.response.RoleResponse com.htf.controller.RoleController.getRole(java.lang.String)
+2017-08-21 10:11:42.547  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role],methods=[POST]}" onto public void com.htf.controller.RoleController.addRole(com.htf.controller.request.RoleRequest)
+2017-08-21 10:11:42.547  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/all],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleToUserResponse> com.htf.controller.RoleController.findAllRole()
+2017-08-21 10:11:42.547  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role],methods=[PUT]}" onto public void com.htf.controller.RoleController.updateRole(com.htf.controller.request.RoleRequest)
+2017-08-21 10:11:42.548  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/{id}],methods=[DELETE]}" onto public void com.htf.controller.RoleController.delRole(java.lang.String)
+2017-08-21 10:11:42.548  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/sub_roles],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleSubResponse> com.htf.controller.RoleController.getSubRoles()
+2017-08-21 10:11:42.548  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/child/{id}],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleSubResponse> com.htf.controller.RoleController.getChildRoles(java.lang.String)
+2017-08-21 10:11:42.548  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/role/all_cascade],methods=[GET]}" onto public java.util.List<com.htf.controller.response.RoleCascadeResponse> com.htf.controller.RoleController.findAdllRoleBeltCascade()
+2017-08-21 10:11:42.552  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/list],methods=[GET]}" onto public com.github.pagehelper.PageInfo<com.htf.controller.response.UserResponse> com.htf.controller.UserController.list(java.lang.String,java.lang.String,java.lang.String)
+2017-08-21 10:11:42.553  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[GET]}" onto public com.htf.controller.response.UserResponse com.htf.controller.UserController.getUserInfo(java.lang.String)
+2017-08-21 10:11:42.553  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user],methods=[POST]}" onto public void com.htf.controller.UserController.addUser(com.htf.controller.request.UserRequest)
+2017-08-21 10:11:42.553  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user],methods=[PUT]}" onto public void com.htf.controller.UserController.updateUser(com.htf.controller.request.UserRequest)
+2017-08-21 10:11:42.554  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/user/{id}],methods=[DELETE]}" onto public void com.htf.controller.UserController.delUser(java.lang.String)
+2017-08-21 10:11:42.554  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2017-08-21 10:11:42.558  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2017-08-21 10:11:42.559  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2017-08-21 10:11:42.560  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2017-08-21 10:11:42.563  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-21 10:11:42.563  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-21 10:11:43.149  INFO 28748 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4ec7c66d: startup date [Mon Aug 21 10:11:38 CST 2017]; root of context hierarchy
+2017-08-21 10:11:43.291  INFO 28748 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:11:43.291  INFO 28748 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:11:43.421  INFO 28748 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-21 10:11:44.204  WARN 28748 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2017-08-21 10:11:44.368  INFO 28748 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-08-21 10:11:44.369  INFO 28748 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2017-08-21 10:11:44.376  INFO 28748 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2017-08-21 10:11:44.378  INFO 28748 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2017-08-21 10:11:44.378  INFO 28748 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2017-08-21 10:11:44.391  INFO 28748 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2017-08-21 10:11:44.398  INFO 28748 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2017-08-21 10:11:44.481  WARN 28748 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:11:44.525  WARN 28748 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:11:44.532  WARN 28748 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:11:44.534  WARN 28748 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:11:44.575  WARN 28748 --- [restartedMain] d.s.r.o.OperationImplicitParameterReader : Coercing to be of type string. This may not even be a scalar type in actuality
+2017-08-21 10:11:44.643  INFO 28748 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9000 (http)
+2017-08-21 10:11:44.648  INFO 28748 --- [restartedMain] com.htf.Application                      : Started Application in 6.746 seconds (JVM running for 7.294)
+2017-08-21 10:11:44.648  INFO 28748 --- [restartedMain] com.htf.Application                      : 
+----------------------------------------------------------
+	Application 'htf admin' is running! Access URLs:
+	Local: 		http://localhost:9000
+----------------------------------------------------------
+2017-08-21 10:11:48.330  INFO 28748 --- [http-nio-9000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-21 10:11:48.330  INFO 28748 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-21 10:11:48.351  INFO 28748 --- [http-nio-9000-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+2017-08-21 10:11:48.364  INFO 28748 --- [http-nio-9000-exec-2] a.s.s.m.AbstractValidatingSessionManager : Enabling session validation scheduler...
+2017-08-21 11:11:48.375  INFO 28748 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Validating all active sessions...
+2017-08-21 11:11:48.377  INFO 28748 --- [SessionValidationThread-1] a.s.s.m.AbstractValidatingSessionManager : Finished session validation.  No sessions were stopped.
