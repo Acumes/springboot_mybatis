@@ -2,6 +2,7 @@ package com.htf.controller;
 
 import com.htf.controller.response.ResultResponse;
 import com.htf.entity.User;
+import com.htf.exception.ExceptionResponse;
 import com.htf.service.MenuService;
 import com.htf.service.UserService;
 import com.htf.util.ShiroUtils;
@@ -41,11 +42,27 @@ public class LoginController {
     public ResultResponse login(@RequestBody Map<String, String> map) {
         UsernamePasswordToken token = null;
         try {
-            String password = map.get("password");
             String username = map.get("username");
-            Subject subject = ShiroUtils.getSubject();
             //sha256加密
-            password = new Sha256Hash(password).toHex();
+            String password = new Sha256Hash(map.get("password")).toHex();
+            User user = userService.findByUserName(username);
+//      账号不存在
+        if(user == null) {
+            throw new ExceptionResponse("用户名不正确");
+        }
+
+        //密码错误
+        if(!password.equals(user.getPassword())) {
+            throw new ExceptionResponse("密码不正确");
+        }
+
+        //账号禁用
+        if("0".equals(user.getStatus())){
+            throw new ExceptionResponse("用户已被禁用,请联系管理员");
+        }
+
+            Subject subject = ShiroUtils.getSubject();
+
             token = new UsernamePasswordToken(username, password);
             subject.login(token);
         } catch (UnknownAccountException e) {

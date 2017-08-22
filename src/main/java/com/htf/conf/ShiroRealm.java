@@ -1,6 +1,7 @@
 package com.htf.conf;
 
 import com.htf.entity.User;
+import com.htf.exception.ExceptionResponse;
 import com.htf.service.MenuService;
 import com.htf.service.UserService;
 import org.apache.shiro.authc.*;
@@ -53,19 +54,19 @@ public class ShiroRealm extends AuthorizingRealm {
         User user = userService.findByUserName(username);
 //
 //        //账号不存在
-        if(user == null) {
-            throw new UnknownAccountException("用户名不正确");
-        }
+//        if(user == null) {
+//            throw new ExceptionResponse("用户名不正确");
+//        }
 //
 //        //密码错误
-        if(!password.equals(user.getPassword())) {
-            throw new IncorrectCredentialsException("密码不正确");
-        }
+//        if(!password.equals(user.getPassword())) {
+//            throw new ExceptionResponse("密码不正确");
+//        }
 //
 //        //账号禁用
-        if("0".equals(user.getStatus())){
-            throw new LockedAccountException("用户已被禁用,请联系管理员");
-        }
+//        if("0".equals(user.getStatus())){
+//            throw new ExceptionResponse("用户已被禁用,请联系管理员");
+//        }
 
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user, password, getName());
         return info;
