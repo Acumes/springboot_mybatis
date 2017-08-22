@@ -91,6 +91,9 @@ public class MenuServiceImpl implements MenuService {
 
     private Integer toMaxOrder(String parentId){
         Integer max = menuMapper.findMaxOrderByParentId(parentId);
+        if(max == null){
+            return max = 0;
+        }
         return  ++max;
     }
 }

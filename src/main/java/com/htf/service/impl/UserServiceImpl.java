@@ -108,7 +108,10 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         BeanUtils.copyProperties(request,user);
         user.setStatus("1");
-        String password = new Sha256Hash(request.getPassword()).toHex();
+        String password = "";
+        if(request.getPassword() != null){
+            password = new Sha256Hash(request.getPassword()).toHex();
+        }
         user.setPassword(password);
         return user;
     }
