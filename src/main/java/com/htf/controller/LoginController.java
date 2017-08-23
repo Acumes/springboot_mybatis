@@ -5,7 +5,9 @@ import com.htf.entity.User;
 import com.htf.exception.ExceptionResponse;
 import com.htf.service.MenuService;
 import com.htf.service.UserService;
+import com.htf.util.ImgValidateCode;
 import com.htf.util.ShiroUtils;
+import com.htf.util.UUIDGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -16,11 +18,20 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import sun.misc.BASE64Encoder;
 
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -92,5 +103,28 @@ public class LoginController {
             user.setId("asdasdsa");
         }
         return user;
+    }
+
+    @RequestMapping(value = "/loginVerImg", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Map<String, Object> loginVerImg(HttpServletRequest request, HttpSession session) {
+        ImgValidateCode vCode = new ImgValidateCode(120, 30, 4, 10);
+
+        String handle = UUIDGenerator.creatUUID();
+//        cacheService.setValue(handle, vCode.getCode());
+
+        // 图片加密返回字符串，data-url展示
+        BufferedImage imgbuf = vCode.getBuffImg();
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+
+        try {
+            ImageIO.write(imgbuf, "png", os);
+            BASE64Encoder encoder = new BASE64Encoder();
+            Map<String, Object> resultMap = new HashMap<>();
+            resultMap.put("src", "data:image/png;base64," + encoder.encode(os.toByteArray()).replace("\r\n", ""));
+            resultMap.put("handle", handle);
+            return resultMap;
+        } catch (IOException e) {
+            throw new ExceptionResponse("验证码生成失败", e);
+        }
     }
 }
