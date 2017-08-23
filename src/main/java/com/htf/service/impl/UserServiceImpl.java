@@ -1,9 +1,6 @@
 package com.htf.service.impl;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.google.common.base.Strings;
 import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.RoleToUserResponse;
 import com.htf.controller.response.UserResponse;
@@ -16,9 +13,8 @@ import com.htf.mapper.UserMapper;
 import com.htf.mapper.UserRoleRelMapper;
 import com.htf.util.FilterAndOrder;
 import com.htf.util.PagesInfo;
-import com.htf.util.ShiroUtils;
 import com.htf.util.UUIDGenerator;
-import org.apache.shiro.crypto.hash.Sha256Hash;
+//import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import com.htf.service.UserService;
@@ -67,7 +63,6 @@ public class UserServiceImpl implements UserService {
             this.disposeUserRoleRel(request.getRoles(),user.getId());
         }
 //        User getCurrentUser
-        user.setCreator(ShiroUtils.getUserId());
         userMapper.insert(user);
     }
 
@@ -84,7 +79,6 @@ public class UserServiceImpl implements UserService {
         if(request.getRoles().size() > 0){
             this.disposeUserRoleRel(request.getRoles(),user.getId());
         }
-        user.setModifier(ShiroUtils.getUserId());
         userMapper.updateByPrimaryKey(user);
     }
 
@@ -110,7 +104,7 @@ public class UserServiceImpl implements UserService {
         user.setStatus("1");
         String password = "";
         if(request.getPassword() != null){
-            password = new Sha256Hash(request.getPassword()).toHex();
+//            password = new Sha256Hash(request.getPassword()).toHex();
         }
         user.setPassword(password);
         return user;

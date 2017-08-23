@@ -6,7 +6,6 @@ import com.htf.exception.ExceptionResponse;
 import com.htf.service.MenuService;
 import com.htf.service.UserService;
 import com.htf.util.ImgValidateCode;
-import com.htf.util.ShiroUtils;
 import com.htf.util.UUIDGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -72,15 +71,9 @@ public class LoginController {
             throw new ExceptionResponse("用户已被禁用,请联系管理员");
         }
 
-            Subject subject = ShiroUtils.getSubject();
 
             token = new UsernamePasswordToken(username, password);
-            subject.login(token);
-        } catch (UnknownAccountException e) {
-            return ResultResponse.error(e.getMessage());
-        } catch (IncorrectCredentialsException e) {
-            return ResultResponse.error(e.getMessage());
-        } catch (LockedAccountException e) {
+        } catch (Exception e) {
             return ResultResponse.error(e.getMessage());
         }
         return ResultResponse.ok();
@@ -89,7 +82,6 @@ public class LoginController {
     @RequestMapping(value = "/logout",method = RequestMethod.GET)
     @ApiOperation(value = "用户退出",notes = "用户退出")
     public ResultResponse logout() {
-        ShiroUtils.logout();
         return ResultResponse.ok();
     }
 
@@ -97,12 +89,7 @@ public class LoginController {
     @RequestMapping(value = "/getCurrentUser",method = RequestMethod.GET)
     @ApiOperation(value = "当前用户",notes = "当前用户")
     public User getCurrentUser() {
-        User user = ShiroUtils.getUser();
-        if(user == null){
-            user = new User();
-            user.setId("asdasdsa");
-        }
-        return user;
+        return null;
     }
 
     @RequestMapping(value = "/loginVerImg", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
