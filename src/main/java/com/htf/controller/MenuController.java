@@ -2,12 +2,16 @@ package com.htf.controller;
 
 import com.htf.controller.request.MenuRequest;
 import com.htf.controller.response.MenuResponse;
+import com.htf.entity.Menu;
 import com.htf.service.MenuService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by PC-FENG on 2017/8/18.
@@ -33,8 +37,8 @@ public class MenuController {
         menuService.updateMenu(request);
     }
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
-    @ApiOperation(value = "修改菜单",notes = "根据参数修改菜单")
-    @ApiImplicitParam(value = "MenuRequest", required = true,dataType = "MenuRequest")
+    @ApiOperation(value = "获取菜单详情",notes = "根据id获取菜单")
+    @ApiImplicitParam(value = "id", required = true,dataType = "string")
     public MenuResponse getMenu(@PathVariable String id){
         return menuService.getMenu(id);
     }
@@ -43,6 +47,13 @@ public class MenuController {
     @ApiImplicitParam(value = "id", required = true,dataType = "string")
     public void delMenu(@PathVariable String id){
         menuService.delMenu(id);
+    }
+
+    @RequestMapping(value = "/user/{id}",method = RequestMethod.GET)
+    @ApiOperation(value = "获取用户菜单详情",notes = "根据用户id获取菜单")
+    @ApiImplicitParam(value = "id", required = true,dataType = "string")
+    public Set<String> getUserMenuList(@PathVariable String id){
+        return menuService.getPermissions(id);
     }
 
 }
