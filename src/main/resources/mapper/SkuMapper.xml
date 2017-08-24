@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.htf.mapper.SkuMapper">
+    <!--开启二级缓存-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+        <!--根据id查询用户详情-->
+    <sql id="Base_Column_List" >
+            sku_code as skuCode,
+			name as name,
+            status as status,
+			bom_status as bomStatus,
+			measure_unit_id as `measureUnit.measureunitCode`,
+			piffer as piffer,
+			verify as verify,
+			IF(verify = 1, "已审核", "未审核") verifySearch,
+			VERIFIER as verifier,
+			VERIFY_NAME as verifyName,
+			VERIFY_TIME as verifyTime,
+			has_bom_status as hasBom,
+			IF(has_bom_status = 1, "是", "否") hasBomSearch,
+			pictures as pictures,
+			comment as comment,
+			create_time as createTime,
+			creator as creatorId
+    </sql>
+    <!--根据id查询用户详情-->
+    <select id="selectByPrimaryKey" parameterType="string" resultType="com.htf.entity.Sku">
+        SELECT 
+        <include refid="Base_Column_List" />
+        FROM sku WHERE sku_code=#{sku_code}
+    </select>
+    <update id="updateByPrimaryKey" parameterType="com.htf.entity.Sku">
+        update SKU
+        <set>
+            <if test="name != null">
+                NAME = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="comment != null">
+                COMMENT = #{comment,jdbcType=VARCHAR},
+            </if>
+            <if test="piffer != null">
+                PIFFER = #{piffer,jdbcType=VARCHAR},
+            </if>
+            <if test="pictures != null">
+                PICTURES = #{pictures,jdbcType=VARCHAR},
+            </if>
+            <if test="modifierId != null">
+                MODIFIER = #{modifierId,jdbcType=TINYINT},
+            </if>
+            MODIFY_TIME = SYSDATE()
+        </set>
+        where sku_code = #{skuCode,jdbcType=VARCHAR}
+    </update>
+    <insert id="insert" parameterType="com.htf.entity.Sku">
+        INSERT INTO sku (`sku_code`, `name`, `status`, `bom_status`, `HAS_BOM_STATUS`,
+   		`comment`, `pictures`, `create_time`, `creator`, `modify_time`, `modifier`, `piffer`, `verifier`, `verify_Name`, `verify_Time`, `verify`
+   		 )
+   		VALUES (#{skuCode}, #{name}, 1, -1,
+   		#{hasBom}, #{comment}, #{pictures}, #{createTime}, #{creatorId}, #{modifyTime}, #{modifierId},
+   		#{piffer}, #{verifier}, #{verifyName}, #{verifyTime}, #{verify})
+    </insert>
+    <delete id="deleteByPrimaryKey">
+        DELETE  FROM SKU WHERE sku_code = #{code,jdbcType=VARCHAR}
+    </delete>
+    <select id="selectByName"  resultType="com.htf.entity.Sku">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM sku WHERE name = #{name,jdbcType=VARCHAR}
+    </select>
+</mapper>
