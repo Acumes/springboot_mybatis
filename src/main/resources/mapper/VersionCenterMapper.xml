@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.htf.mapper.VersionCenterMapper" >
+   	<select id="getMasterVersion" resultType="_int">
+   		select cur_version from version_center 
+   		where type = #{type} and ref_type ='master'
+   	</select>
+   	<select id="getBranchVersion" resultType="int">
+   		select cur_version from version_center 
+   		where vc.branch_id = #{branchId}
+   	</select>
+   	<update id="increaseMasterVersion">
+   		update version_center set cur_version = cur_version + 1 
+   		where type = #{type} and ref_type ='master'
+   	</update>
+   	<update id="increaseBranchVersion">
+   		update version_center set cur_version = cur_version + 1 
+   		where branch_id = #{branchId}
+   	</update>
+   	
+   	<update id="revertMasterVersion">
+   		update version_center set cur_version = cur_version - 1 
+   		where type = #{type} and ref_type ='master' and cur_version = #{interimVersion}
+   	</update>
+   	<update id="revertBranchVersion">
+   		update version_center set cur_version = cur_version - 1 
+   		where branch_id = #{branchId} and cur_version = #{interimVersion}
+   	</update>
+   	
+   	<insert id="insert">
+   		INSERT INTO `version_center` (`branch_id`, `type`, `fork_version`, `cur_version`, 
+   		`ref_type`, `ref_id`, `status`, `crt_time`, `creator`) 
+   		VALUES (#{version.branchId}, #{version.type}, #{version.forkVersion},
+   		#{version.curVersion}, #{version.refType}, #{version.refId}, #{version.status}, 
+   		#{version.crtTime}, #{version.creatorId})
+   	</insert>
+   	
+   	<resultMap type="com.htf.entity.Version" id="vcResult" autoMapping="true">
+   		<id column="branchId" property="branchId"/>
+   		<result column="type" property="type" javaType="com.htf.entity.Version$Type"/>
+   		<result column="refType" property="refType" javaType="com.htf.entity.Version$RefType"/>
+   	</resultMap>
+   	<sql id="baseSelect">
+   		select 
+			vc.branch_id as branchId,
+			vc.type,
+			vc.fork_version as forkVersion,
+			vc.cur_version as curVersion,
+			vc.ref_type as refType,
+			vc.ref_id as refId,
+			vc.status,
+			vc.crt_time as crtTime,
+			vc.creator as creatorId,
+			pui.NICKNAME as creatorName
+   		from version_center vc 
+   		LEFT JOIN P_USER_INFO pui on vc.CREATOR = pui.USER_ID
+
+   	</sql>
+   	<select id="getByBranchId" resultMap="vcResult">
+   		<include refid="baseSelect"/>
+   		where vc.branch_id = #{branchId}
+   	</select>
+   	<select id="getByRefInfo" resultMap="vcResult">
+   		<include refid="baseSelect"/>
+   		where vc.type = #{type} and vc.ref_type = #{refType} and vc.ref_id = #{refId}
+   	</select>
+   	<update id="temporaryBranch2Formal">
+   		update version_center 
+   		set ref_type = #{refType}, ref_id = #{refId}, 
+   			crt_time = #{crtTime}, creator = #{creatorId}
+   		where branch_id = #{branchId} and ref_type = 'temporary'
+   	</update>
+</mapper>

@@ -1,4 +1,4 @@
-package com.htf.conf;
+package com.htf.shiro;
 
 import com.htf.entity.User;
 import com.htf.exception.ExceptionResponse;

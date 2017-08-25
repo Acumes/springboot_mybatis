@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.htf.mapper.SkuMapper">
+<mapper namespace="com.htf.mapper.SkuBomMapper">
     <!--开启二级缓存-->
     <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
         <!--根据id查询用户详情-->
@@ -70,4 +70,14 @@
         <include refid="Base_Column_List" />
         FROM sku WHERE name = #{name,jdbcType=VARCHAR}
     </select>
+    <insert id="batchInsert">
+        insert into sku_bom(`sku_code`, `bom_sku_code`,  `qty`, `QTY_DENOMINATOR`,
+        `WASTE_RATE`, `is_deleted_record`, `COMMENT`, `sku_version`, `CRT_TIME`, `CREATOR`)
+        VALUES
+        <foreach collection="items" item="item" separator=",">
+            (#{uniformSkuCode}, #{item.bomSku.skuCode},  #{item.qty},
+            #{item.qtyDenominator}, #{item.wasteRate}, false, #{item.comment}, #{uniformSkuVersion},
+            #{uniformCrtTime}, #{uniformCreator})
+        </foreach>
+    </insert>
 </mapper>

@@ -2,6 +2,7 @@ package com.htf.controller;
 
 import com.htf.controller.request.SkuTypeRequest;
 import com.htf.entity.SkuType;
+import com.htf.service.CacheService;
 import com.htf.service.SkuTypeService;
 import com.htf.util.UUIDGenerator;
 import io.swagger.annotations.Api;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @Api(value = "skuType",description = "物料类型的Controller")
+@RequestMapping("/skuType")
 public class SkuTypeController {
     @Autowired
     private SkuTypeService skuTypeService;
@@ -23,7 +25,6 @@ public class SkuTypeController {
     @ApiImplicitParam(value = "Sku",required = true,dataType = "Sku")
     @RequestMapping(value = "",method = RequestMethod.POST)
     public void addSkuType(@RequestBody SkuTypeRequest request){
-        request.setId(UUIDGenerator.creatUUID());
         skuTypeService.addSkuType(request);
     }
     @ApiOperation(value = "查询SKUType",notes = "根据id查询相应的skuType")

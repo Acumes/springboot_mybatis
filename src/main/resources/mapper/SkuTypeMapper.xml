@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.htf.mapper.RoleMapper">
+<mapper namespace="com.htf.mapper.SkuTypeMapper">
     <!--开启二级缓存-->
     <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
     <resultMap id="BaseResultMap" type="com.htf.entity.Role" >
@@ -12,25 +12,22 @@
     </resultMap>
         <!--根据id查询用户详情-->
     <sql id="Base_Column_List" >
-      id, name, description, parentId, principal
+      id, name, comment, parentId
     </sql>
     <!--根据id查询用户详情-->
-    <select id="selectByPrimaryKey" parameterType="string" resultType="com.htf.entity.Role">
+    <select id="selectByPrimaryKey" parameterType="string" resultType="com.htf.entity.SkuType">
         SELECT 
         <include refid="Base_Column_List" />
-        FROM role WHERE id=#{id}
+        FROM SKU_TYPE WHERE id=#{id}
     </select>
-    <update id="updateByPrimaryKey" parameterType="com.htf.entity.Role">
-        update ROLE
+    <update id="updateByPrimaryKey" parameterType="com.htf.entity.SkuType">
+        update SKU_TYPE
         <set>
             <if test="name != null">
                 NAME = #{name,jdbcType=VARCHAR},
             </if>
-            <if test="principal != null">
-                PRINCIPAL = #{principal,jdbcType=TINYINT},
-            </if>
-            <if test="description != null">
-                DESCRIPTION = #{description,jdbcType=TINYINT},
+            <if test="comment != null">
+                COMMENT = #{comment,jdbcType=TINYINT},
             </if>
             <if test="parentId != null">
                 PARENTID = #{parentId,jdbcType=VARCHAR},
@@ -43,17 +40,17 @@
         where ID = #{id,jdbcType=VARCHAR}
     </update>
     <insert id="insert" parameterType="com.htf.entity.Role">
-        insert into ROLE (ID, NAME,
-        DESCRIPTION, PARENTID, PRINCIPAL,
+        insert into SKU_TYPE (ID, NAME,
+        COMMENT, PARENTID,
         CREATE_DATE, CREATOR)
         values (#{id,jdbcType=VARCHAR}, #{name, jdbcType=VARCHAR},
-        #{description,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{principal,jdbcType=VARCHAR},
+        #{comment,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR},
         SYSDATE(), #{creator,jdbcType=VARCHAR})
     </insert>
     <delete id="deleteByPrimaryKey">
-        DELETE  FROM ROLE WHERE id = #{id,jdbcType=VARCHAR}
+        DELETE  FROM SKU_TYPE WHERE id = #{id,jdbcType=VARCHAR}
     </delete>
-    <select id="findByParentRole"  resultType="com.htf.entity.Role">
+    <select id="findByParentSkyType"  resultType="com.htf.entity.Role">
         SELECT
         <include refid="Base_Column_List" />
         FROM role WHERE PARENTID IS NULL
@@ -68,4 +65,10 @@
         <include refid="Base_Column_List" />
         FROM role
     </select>
+    <select id="findByName" parameterType="string" resultType="com.htf.entity.SkuType">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM SKU_TYPE WHERE name=#{name}
+    </select>
+
 </mapper>

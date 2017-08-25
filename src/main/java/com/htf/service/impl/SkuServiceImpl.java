@@ -2,8 +2,11 @@ package com.htf.service.impl;
 
 import com.htf.entity.Sku;
 import com.htf.exception.ExceptionResponse;
+import com.htf.mapper.SkuBomMapper;
 import com.htf.mapper.SkuMapper;
 import com.htf.service.SkuService;
+import com.htf.util.NullUtil;
+import com.htf.util.ShiroUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +20,17 @@ import java.util.Date;
 public class SkuServiceImpl implements SkuService {
     @Autowired
     private SkuMapper skuMapper;
+    @Resource
+    private SkuBomMapper skuBomMapper;
 
     @Override
     public void addSku(Sku request) {
         checkSku4Create(request);
-        request.setCreateTime(new Date());
+        request.setCreatorId(ShiroUtils.getUserId());
         skuMapper.insert(request);
+        if(NullUtil.hasItem(request.getBoms())){
+
+        }
     }
 
     @Override

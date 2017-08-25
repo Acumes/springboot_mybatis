@@ -14,7 +14,6 @@ public class SkuBom implements Serializable {
     private static final long serialVersionUID = 1L;
     private String skuCode;
     private Sku bomSku;
-//    private MeasureUnitDto measureUnit;
     private BigDecimal qty;
     private Integer qtyDenominator;
     private BigDecimal wasteRate;

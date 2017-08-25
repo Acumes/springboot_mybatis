@@ -8,4 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface SkuTypeMapper extends BaseMapper<SkuType , String >{
+    SkuType findByName(String name);
 }

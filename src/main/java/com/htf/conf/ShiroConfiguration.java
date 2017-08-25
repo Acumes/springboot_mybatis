@@ -1,5 +1,6 @@
 package com.htf.conf;
 
+import com.htf.shiro.ShiroRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
