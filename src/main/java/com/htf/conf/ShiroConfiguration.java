@@ -1,5 +1,6 @@
 package com.htf.conf;
 
+import com.htf.shiro.CustomShiroFilterFactoryBean;
 import com.htf.shiro.ShiroRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.SessionManager;
@@ -42,7 +43,8 @@ public class ShiroConfiguration {
 
     @Bean
     public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
-        ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
+        //这里设置了自己的过滤器
+        ShiroFilterFactoryBean shiroFilter = new CustomShiroFilterFactoryBean();
         shiroFilter.setSecurityManager(securityManager);
         shiroFilter.setLoginUrl("/auth.html");
         shiroFilter.setUnauthorizedUrl("/403.html");

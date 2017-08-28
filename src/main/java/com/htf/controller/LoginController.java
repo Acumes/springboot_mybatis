@@ -3,6 +3,7 @@ package com.htf.controller;
 import com.htf.controller.response.ResultResponse;
 import com.htf.entity.User;
 import com.htf.exception.ExceptionResponse;
+import com.htf.service.CacheService;
 import com.htf.service.MenuService;
 import com.htf.service.UserService;
 import com.htf.util.ImgValidateCode;
@@ -33,6 +34,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by PC-FENG on 2017/8/21.
@@ -46,11 +48,14 @@ public class LoginController {
     private UserService userService;
     @Autowired
     private MenuService menuService;
+    @Autowired
+    private CacheService cacheService;
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ApiOperation(value = "用户登录",notes = "根据用户名密码判断用户")
     @ApiImplicitParam(value = "Map",required = true,dataType = "Map")
-    public ResultResponse login(@RequestBody Map<String, String> map) {
+    public Map<String,Object> login(@RequestBody Map<String, String> map) {
+        Map<String , Object> resurt = new HashMap<>();
         UsernamePasswordToken token = null;
         try {
             String username = map.get("username");
@@ -61,29 +66,24 @@ public class LoginController {
         if(user == null) {
             throw new ExceptionResponse("用户名不正确");
         }
-
         //密码错误
         if(!password.equals(user.getPassword())) {
             throw new ExceptionResponse("密码不正确");
         }
-
         //账号禁用
         if("0".equals(user.getStatus())){
             throw new ExceptionResponse("用户已被禁用,请联系管理员");
         }
-
             Subject subject = ShiroUtils.getSubject();
-
             token = new UsernamePasswordToken(username, password);
+            String uuid = UUIDGenerator.creatUUID();
+            resurt.put("uuid",uuid);
+            cacheService.setValue(uuid,uuid + "_" + user.getId() + "_" + user.getUsername() + "_" + user.getPassword());
             subject.login(token);
-        } catch (UnknownAccountException e) {
-            return ResultResponse.error(e.getMessage());
-        } catch (IncorrectCredentialsException e) {
-            return ResultResponse.error(e.getMessage());
-        } catch (LockedAccountException e) {
-            return ResultResponse.error(e.getMessage());
+        }catch (Exception e){
+            System.out.println(e);
         }
-        return ResultResponse.ok();
+        return resurt;
     }
 
     @RequestMapping(value = "/logout",method = RequestMethod.GET)
