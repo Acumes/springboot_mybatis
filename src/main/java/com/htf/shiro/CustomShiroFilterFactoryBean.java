@@ -115,6 +115,17 @@ public class CustomShiroFilterFactoryBean extends ShiroFilterFactoryBean {
                     if(!cache_uuid.equals(uuid)){
                         throw new AuthenticationException("uuid is illegal.");
                     }
+                    if("".equals(cacheService.getValue("TIME_"+ uuid + userId))){
+                        cacheService.setValue("TIME_" + uuid + userId, System.currentTimeMillis() + "");
+                    }
+                    //30分钟过期
+                    if (System.currentTimeMillis() - Long.parseLong(cacheService.getValue("TIME_"+ uuid + userId)) > 30 * 60 * 1000){
+                        cacheService.remove("TIME_"+ uuid + userId);
+                        cacheService.remove(uuid);
+                        throw new AuthenticationException("uuid is be overdue.");
+                    }else{
+                        cacheService.setValue("TIME_"+ uuid + userId, System.currentTimeMillis() + "");
+                    }
                     try {
                         ws.login(token);
                     } catch (AuthenticationException e) {
