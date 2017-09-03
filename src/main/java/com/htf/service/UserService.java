@@ -8,6 +8,8 @@ import com.htf.entity.User;
 import com.htf.util.FilterAndOrder;
 import com.htf.util.PagesInfo;
 
+import java.util.List;
+
 /**
  * Created by PC-FENG on 2017/8/17.
  */
@@ -21,4 +23,6 @@ public interface UserService {
     PageInfo<UserResponse> list(PagesInfo<UserResponse> pi, FilterAndOrder fao, String roleId, String groupId);
 
     User findByUserName(String username);
+
+    List<UserResponse> getAllUser();
 }

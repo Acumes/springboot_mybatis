@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.UserResponse;
+import com.htf.entity.User;
 import com.htf.service.UserService;
 import com.htf.util.FilterAndOrder;
 import com.htf.util.FilterOrderAndPage;
@@ -14,6 +15,8 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by PC-FENG on 2017/8/16.
@@ -72,5 +75,11 @@ public class UserController {
     @ApiImplicitParam(value = "id",required = true,dataType = "string")
     public void delUser(@PathVariable String id){
         userService.delUser(id);
+    }
+    @RequestMapping(value = "/allUser",method = RequestMethod.GET)
+    @ApiOperation(value = "获取所有用户",notes = "获取所有用户")
+    @ApiImplicitParam(value = "id",required = true,dataType = "string")
+    public List<UserResponse> getAllUser(){
+        return userService.getAllUser();
     }
 }

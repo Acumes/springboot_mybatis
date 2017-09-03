@@ -19,4 +19,6 @@ public interface UserMapper extends BaseMapper<User,String>{
     public List<User> list();
 
     User findByUserName(String username);
+
+    List<User> getAllUser();
 }

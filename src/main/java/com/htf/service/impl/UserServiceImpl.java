@@ -104,6 +104,20 @@ public class UserServiceImpl implements UserService {
         return userMapper.findByUserName(username);
     }
 
+    @Override
+    public List<UserResponse> getAllUser() {
+        List<User> list = userMapper.list();
+        List<UserResponse> responses = new ArrayList<>();
+        if(list.size() > 0){
+            list.forEach(item -> {
+                UserResponse userResponse = new UserResponse();
+                BeanUtils.copyProperties(item,userResponse);
+                responses.add(userResponse);
+            });
+        }
+        return responses;
+    }
+
     private User toUser(UserRequest request) {
         User user = new User();
         BeanUtils.copyProperties(request,user);
