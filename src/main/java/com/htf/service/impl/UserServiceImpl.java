@@ -118,6 +118,11 @@ public class UserServiceImpl implements UserService {
         return responses;
     }
 
+    @Override
+    public void updateUserPhoto(String resourceURI) {
+        userMapper.updateUserPhoto(resourceURI);
+    }
+
     private User toUser(UserRequest request) {
         User user = new User();
         BeanUtils.copyProperties(request,user);

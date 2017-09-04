@@ -119,7 +119,7 @@ public class CustomShiroFilterFactoryBean extends ShiroFilterFactoryBean {
                         cacheService.setValue("TIME_" + uuid + userId, System.currentTimeMillis() + "");
                     }
                     //30分钟过期
-                    if (System.currentTimeMillis() - Long.parseLong(cacheService.getValue("TIME_"+ uuid + userId)) > 30 * 60 * 1000){
+                    if (System.currentTimeMillis() - Long.parseLong(cacheService.getValue("TIME_"+ uuid + userId)) > 20 * 60 * 1000){
                         cacheService.remove("TIME_"+ uuid + userId);
                         cacheService.remove(uuid);
                         throw new AuthenticationException("uuid is be overdue.");

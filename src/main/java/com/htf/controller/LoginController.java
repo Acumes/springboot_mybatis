@@ -57,7 +57,7 @@ public class LoginController {
     public Map<String,Object> login(@RequestBody Map<String, String> map) {
         Map<String , Object> resurt = new HashMap<>();
         UsernamePasswordToken token = null;
-        try {
+
             String username = map.get("username");
             //sha256加密
             String password = new Sha256Hash(map.get("password")).toHex();
@@ -74,10 +74,12 @@ public class LoginController {
         if("0".equals(user.getStatus())){
             throw new ExceptionResponse("用户已被禁用,请联系管理员");
         }
+        try {
             Subject subject = ShiroUtils.getSubject();
             token = new UsernamePasswordToken(username, password);
             String uuid = UUIDGenerator.creatUUID();
             resurt.put("uuid",uuid);
+            resurt.put("status","200");
             cacheService.setValue(uuid,uuid + "_" + user.getId() + "_" + user.getUsername() + "_" + user.getPassword());
             subject.login(token);
         }catch (Exception e){

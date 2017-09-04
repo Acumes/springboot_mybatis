@@ -6,10 +6,7 @@ import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.UserResponse;
 import com.htf.entity.User;
 import com.htf.service.UserService;
-import com.htf.util.FilterAndOrder;
-import com.htf.util.FilterOrderAndPage;
-import com.htf.util.PagesInfo;
-import com.htf.util.UUIDGenerator;
+import com.htf.util.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -76,10 +73,21 @@ public class UserController {
     public void delUser(@PathVariable String id){
         userService.delUser(id);
     }
+
     @RequestMapping(value = "/allUser",method = RequestMethod.GET)
     @ApiOperation(value = "获取所有用户",notes = "获取所有用户")
-    @ApiImplicitParam(value = "id",required = true,dataType = "string")
     public List<UserResponse> getAllUser(){
         return userService.getAllUser();
+    }
+
+    @ApiOperation(value = "获取当前登录用户",notes = "获取当前登录用户")
+    @RequestMapping(value = "/getCurrentUser",method = RequestMethod.GET)
+    public User getCurrentUserInfo(){
+        return ShiroUtils.getUser();
+    }
+    @ApiOperation(value = "修改用户",notes = "根据请求参数添加用户")
+    @RequestMapping(value = "/",method = RequestMethod.PUT)
+    public void updateUserPhoto(@RequestParam String resourceURI){
+        userService.updateUserPhoto(resourceURI);
     }
 }

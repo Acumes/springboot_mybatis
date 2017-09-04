@@ -21,4 +21,6 @@ public interface UserMapper extends BaseMapper<User,String>{
     User findByUserName(String username);
 
     List<User> getAllUser();
+
+    void updateUserPhoto(String resourceURI);
 }

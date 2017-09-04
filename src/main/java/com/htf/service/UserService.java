@@ -25,4 +25,6 @@ public interface UserService {
     User findByUserName(String username);
 
     List<UserResponse> getAllUser();
+
+    void updateUserPhoto(String resourceURI);
 }
