@@ -15,7 +15,7 @@
     </resultMap>
     <!--根据id查询用户详情-->
     <sql id="Base_Column_List" >
-        id, username, password, email, nick_name,english_name,mobile,gender,status
+        id, username, password, email, nick_name,english_name,mobile,gender,status,photo
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
         SELECT
@@ -88,4 +88,16 @@
         <include refid="Base_Column_List" />
         FROM user WHERE username=#{username}
     </select>
+
+    <select id="getUserByPage" resultType="java.util.Map">
+        SELECT *
+        from USER
+        WHERE USERNAME LIKE  #{searchKeyWord}
+        GROUP BY CREATE_DATE
+    </select>
+    <update id="updateUserPhoto">
+        update USER SET
+        PHOTO = #{photo,jdbcType=VARCHAR}
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
 </mapper>

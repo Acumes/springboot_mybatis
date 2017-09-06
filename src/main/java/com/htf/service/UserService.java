@@ -6,6 +6,8 @@ import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.UserResponse;
 import com.htf.entity.User;
 import com.htf.util.FilterAndOrder;
+import com.htf.util.PageInfoResult;
+import com.htf.util.PageRequest;
 import com.htf.util.PagesInfo;
 
 import java.util.List;
@@ -20,11 +22,11 @@ public interface UserService {
 
     void delUser(String id);
 
-    PageInfo<UserResponse> list(PagesInfo<UserResponse> pi, FilterAndOrder fao, String roleId, String groupId);
-
     User findByUserName(String username);
 
     List<UserResponse> getAllUser();
 
     void updateUserPhoto(String resourceURI);
+
+    PageInfoResult list(PageRequest pageRequest);
 }

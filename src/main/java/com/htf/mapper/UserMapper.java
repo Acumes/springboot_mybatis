@@ -2,8 +2,10 @@ package com.htf.mapper;
 
 import com.htf.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by PC-FENG on 2017/8/17.
@@ -22,5 +24,7 @@ public interface UserMapper extends BaseMapper<User,String>{
 
     List<User> getAllUser();
 
-    void updateUserPhoto(String resourceURI);
+    void updateUserPhoto(@Param("photo") String photo,@Param("id") String id);
+
+    List<Map<String,Object>> getUserByPage(@Param("searchKeyWord")String searchKeyWord);
 }

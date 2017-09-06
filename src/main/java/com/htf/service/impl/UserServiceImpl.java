@@ -14,10 +14,7 @@ import com.htf.exception.ExceptionResponse;
 import com.htf.mapper.RoleMapper;
 import com.htf.mapper.UserMapper;
 import com.htf.mapper.UserRoleRelMapper;
-import com.htf.util.FilterAndOrder;
-import com.htf.util.PagesInfo;
-import com.htf.util.ShiroUtils;
-import com.htf.util.UUIDGenerator;
+import com.htf.util.*;
 import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -26,6 +23,8 @@ import com.htf.service.UserService;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * Created by PC-FENG on 2017/8/17.
@@ -94,10 +93,10 @@ public class UserServiceImpl implements UserService {
         userRoleRelMapper.delByUserId(id);
     }
 
-    @Override
-    public PageInfo<UserResponse> list(PagesInfo<UserResponse> pi, FilterAndOrder fao, String roleId, String groupId) {
-        return null;
-    }
+//    @Override
+//    public PageInfo<UserResponse> list(PagesInfo<UserResponse> pi, FilterAndOrder fao, String roleId, String groupId) {
+//        return null;
+//    }
 
     @Override
     public User findByUserName(String username) {
@@ -120,7 +119,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserPhoto(String resourceURI) {
-        userMapper.updateUserPhoto(resourceURI);
+        userMapper.updateUserPhoto(resourceURI,ShiroUtils.getUserId());
+    }
+
+    @Override
+    public PageInfoResult list(PageRequest pageRequest) {
+        return doPageSortQuery(pageRequest, ()->userMapper.getUserByPage(pageRequest.getSearchKeyWord()));
+    }
+
+    private PageInfoResult doPageSortQuery(PageRequest pageRequest, Supplier<List<Map<String, Object>>> query) {
+        Page<?> page =  PageHelper.startPage(pageRequest.getPageNum(),pageRequest.getPageSize(),true);
+        String orderBy = PageRequest.getOrderSql(pageRequest);
+        if(!Strings.isNullOrEmpty(orderBy)){
+            PageHelper.orderBy(orderBy);
+        }
+        List<Map<String, Object>> userList = query.get();
+        PageInfoResult<Map<String, Object>> result = new PageInfoResult<>(page.getTotal(), pageRequest.getPageSize(), pageRequest.getPageNum());
+        result.setContent(userList);
+        return result;
     }
 
     private User toUser(UserRequest request) {

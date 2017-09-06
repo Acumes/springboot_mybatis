@@ -15,6 +15,7 @@ public class UserResponse {
     private String remark;
     private String username;
     private String status;
+    private String photo;
     private List<RoleToUserResponse> roles;
 
     public String getStatus() {
@@ -87,5 +88,13 @@ public class UserResponse {
 
     public void setRoles(List<RoleToUserResponse> roles) {
         this.roles = roles;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

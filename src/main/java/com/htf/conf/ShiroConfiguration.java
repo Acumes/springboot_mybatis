@@ -59,7 +59,6 @@ public class ShiroConfiguration {
         filterMap.put("/api/**", "anon");
         filterMap.put("/assets/**", "anon");
         filterMap.put("/fonts/**", "anon");
-        filterMap.put("/api/**", "anon");
         filterMap.put("/maps/**", "anon");
         filterMap.put("/api/_devops_/init", "anon");
         filterMap.put("/configuration/ui", "anon");

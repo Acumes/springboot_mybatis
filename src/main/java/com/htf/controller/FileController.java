@@ -1,5 +1,6 @@
 package com.htf.controller;
 
+import com.htf.util.ShiroUtils;
 import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,7 @@ import java.util.Map;
  * Created by PC-FENG on 2017/9/4.
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("")
 @Api(value = "文件上传",description = "文件上传")
 public class FileController {
     private Logger logger = LoggerFactory.getLogger(FileController.class);
@@ -36,7 +37,8 @@ public class FileController {
     @RequestMapping(value = "/imgUpload", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = "application/json;charset=UTF-8")
     public Map<String ,String > imgUpload(@RequestParam("file") MultipartFile file){
         Map<String ,String> map = new HashMap<>();
-        String userId = "asddsds";
+        String userId = ShiroUtils.getUserId();
+        System.out.println(ShiroUtils.getUserId());
         String fileName = userId + "_" + System.currentTimeMillis() + "." + file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".") + 1);
         String filePath = imageDir + userId;
 //        String filePath = "G:\\htf\\resource\\" + userId;
@@ -44,7 +46,7 @@ public class FileController {
         File targetFile = new File(filePath,fileName);
         try {
             file.transferTo(targetFile);
-            map.put("resourceURI",imageDir + userId + "/" + fileName);
+            map.put("resourceURI",userId + "/" + fileName);
         }catch (Exception e){
         }
         return map;

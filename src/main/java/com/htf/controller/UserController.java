@@ -11,8 +11,13 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -25,26 +30,29 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    @Value("${resources.user.photo.path}")
+    private String imageDir;
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public PageInfo<UserResponse> list(@RequestParam(value = "foap",required = false) String foap,
-                                        @RequestParam(value = "roleId",required = false) String roleId,
-                                        @RequestParam(value = "groupId",required = false) String groupId) {
-        FilterOrderAndPage foapObj = JSONObject.parseObject(foap, FilterOrderAndPage.class);
-        System.out.println();
-        PagesInfo<UserResponse> pi = null;
-        FilterAndOrder fao = null;
-        if (null != foapObj) {
-            fao = foapObj.getFao();
-            pi = foapObj.getPage();
-        }
-
-        if (null == pi) { // 设置默认值
-            pi = new PagesInfo<UserResponse>();
-            pi.setPageNum(1);
-            pi.setPageSize(10);
-        }
-        return userService.list(pi,fao,roleId,groupId);
+    public PageInfoResult list(@ModelAttribute PageRequest pageRequest) {
+//        FilterOrderAndPage foapObj = JSONObject.parseObject(foap, FilterOrderAndPage.class);
+//        System.out.println();
+//        PagesInfo<UserResponse> pi = null;
+//        FilterAndOrder fao = null;
+//        if (null != foapObj) {
+//            fao = foapObj.getFao();
+//            pi = foapObj.getPage();
+//        }
+//
+//        if (null == pi) { // 设置默认值
+//            pi = new PagesInfo<UserResponse>();
+//            pi.setPageNum(1);
+//            pi.setPageSize(10);
+//        }
+//        return userService.list(pi,fao,roleId,groupId);
+        System.out.println(ShiroUtils.getUserId());
+        PageInfoResult  result= userService.list(pageRequest);
+        return result;
     }
 
     @ApiOperation(value = "添加用户",notes = "根据请求参数添加用户")
@@ -86,8 +94,29 @@ public class UserController {
         return ShiroUtils.getUser();
     }
     @ApiOperation(value = "修改用户",notes = "根据请求参数添加用户")
-    @RequestMapping(value = "/",method = RequestMethod.PUT)
+    @RequestMapping(value = "/updateUserPhoto",method = RequestMethod.PUT)
     public void updateUserPhoto(@RequestParam String resourceURI){
         userService.updateUserPhoto(resourceURI);
+    }
+
+    @RequestMapping(value = "/getUserPhoto",method = RequestMethod.GET)
+    public void readImg(HttpServletResponse response){
+        UserResponse user = this.getUserInfo(ShiroUtils.getUserId());
+        System.out.println(user.getPhoto() == null || "".equals(user.getPhoto()));
+        System.out.println(imageDir +  user.getPhoto());
+        File file = new File(user.getPhoto() == null || "".equals(user.getPhoto()) ? "" : imageDir +  user.getPhoto());
+        try{
+            InputStream is = new FileInputStream(file);
+            // 循环取出流中的数据
+            byte[] b = new byte[1024];
+            int len;
+            response.setContentType("image/png");
+            while ((len = is.read(b)) > 0) {
+                response.getOutputStream().write(b, 0, len);
+            }
+            is.close();
+        }catch (Exception e){
+
+        }
     }
 }
