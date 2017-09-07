@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService {
         user = toUser(request);
         //角色相关
         userRoleRelMapper.delByUserId(user.getId());
-        if(request.getRoles().size() > 0){
+        if(request.getRoles() != null && request.getRoles().size() > 0){
             this.disposeUserRoleRel(request.getRoles(),user.getId());
         }
         user.setModifier(ShiroUtils.getUserId());

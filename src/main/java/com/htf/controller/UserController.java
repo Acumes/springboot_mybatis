@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.UserResponse;
 import com.htf.entity.User;
+import com.htf.service.CacheService;
 import com.htf.service.UserService;
 import com.htf.util.*;
 import io.swagger.annotations.Api;
@@ -19,6 +20,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by PC-FENG on 2017/8/16.
@@ -32,6 +34,8 @@ public class UserController {
     UserService userService;
     @Value("${resources.user.photo.path}")
     private String imageDir;
+    @Autowired
+    CacheService cacheService;
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public PageInfoResult list(@ModelAttribute PageRequest pageRequest) {
@@ -99,24 +103,37 @@ public class UserController {
         userService.updateUserPhoto(resourceURI);
     }
 
-    @RequestMapping(value = "/getUserPhoto",method = RequestMethod.GET)
-    public void readImg(HttpServletResponse response){
-        UserResponse user = this.getUserInfo(ShiroUtils.getUserId());
-        System.out.println(user.getPhoto() == null || "".equals(user.getPhoto()));
-        System.out.println(imageDir +  user.getPhoto());
-        File file = new File(user.getPhoto() == null || "".equals(user.getPhoto()) ? "" : imageDir +  user.getPhoto());
-        try{
-            InputStream is = new FileInputStream(file);
-            // 循环取出流中的数据
-            byte[] b = new byte[1024];
-            int len;
-            response.setContentType("image/png");
-            while ((len = is.read(b)) > 0) {
-                response.getOutputStream().write(b, 0, len);
-            }
-            is.close();
-        }catch (Exception e){
+    @ApiOperation(value = "修改用户密码",notes = "修改用户密码")
+    @RequestMapping(value = "/updatePassword",method = RequestMethod.PUT)
+    @ApiImplicitParam(value = "Map",dataType = "Map")
+    public void updatePassword(@RequestBody Map<String ,String> map){
 
+
+
+//        userService.updateUserPhoto();
+    }
+
+    @RequestMapping(value = "/getUserPhoto",method = RequestMethod.GET)
+    public void readImg(HttpServletResponse response,@RequestParam String token){
+        if(token != null && !"".equals(token)){
+            String userId = this.cacheService.getValue(token).split("_")[1];
+            if(userId != null){
+                UserResponse userResponse = this.getUserInfo(userId);
+                File file = new File(imageDir +  userResponse.getPhoto());
+                try{
+                    InputStream is = new FileInputStream(file);
+                    // 循环取出流中的数据
+                    byte[] b = new byte[1024];
+                    int len;
+                    response.setContentType("image/png");
+                    while ((len = is.read(b)) > 0) {
+                        response.getOutputStream().write(b, 0, len);
+                    }
+                    is.close();
+                }catch (Exception e){
+
+                }
+            }
         }
     }
 }
