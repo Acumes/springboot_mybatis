@@ -72,10 +72,10 @@
     </select>
     <insert id="batchInsert">
         insert into sku_bom(`sku_code`, `bom_sku_code`,  `qty`, `QTY_DENOMINATOR`,
-        `WASTE_RATE`, `is_deleted_record`, `COMMENT`, `sku_version`, `CRT_TIME`, `CREATOR`)
+        `WASTE_RATE`, `is_deleted_record`, `COMMENT`, `sku_version`, `CREATE_DATE`, `CREATOR`)
         VALUES
         <foreach collection="items" item="item" separator=",">
-            (#{uniformSkuCode}, #{item.bomSku.skuCode},  #{item.qty},
+            (#{uniformSkuCode}, #{item.skuCode},  #{item.qty},
             #{item.qtyDenominator}, #{item.wasteRate}, false, #{item.comment}, #{uniformSkuVersion},
             #{uniformCrtTime}, #{uniformCreator})
         </foreach>

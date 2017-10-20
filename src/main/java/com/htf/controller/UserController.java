@@ -11,6 +11,7 @@ import com.htf.util.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -94,8 +95,12 @@ public class UserController {
 
     @ApiOperation(value = "获取当前登录用户",notes = "获取当前登录用户")
     @RequestMapping(value = "/getCurrentUser",method = RequestMethod.GET)
-    public User getCurrentUserInfo(){
-        return ShiroUtils.getUser();
+    public User getCurrentUserInfo(@RequestParam String token){
+        String userId = this.cacheService.getValue(token).split("_")[1];
+        UserResponse response = this.userService.findById(userId);
+        User user = new User();
+        BeanUtils.copyProperties(response,user);
+        return user;
     }
     @ApiOperation(value = "修改用户",notes = "根据请求参数添加用户")
     @RequestMapping(value = "/updateUserPhoto",method = RequestMethod.PUT)

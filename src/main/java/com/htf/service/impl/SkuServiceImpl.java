@@ -1,10 +1,12 @@
 package com.htf.service.impl;
 
 import com.htf.entity.Sku;
+import com.htf.entity.Version;
 import com.htf.exception.ExceptionResponse;
 import com.htf.mapper.SkuBomMapper;
 import com.htf.mapper.SkuMapper;
 import com.htf.service.SkuService;
+import com.htf.service.VersionCenterService;
 import com.htf.util.NullUtil;
 import com.htf.util.ShiroUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +22,27 @@ import java.util.Date;
 public class SkuServiceImpl implements SkuService {
     @Autowired
     private SkuMapper skuMapper;
-    @Resource
+    @Autowired
     private SkuBomMapper skuBomMapper;
+
+    @Autowired
+    private VersionCenterService vcService;
 
     @Override
     public void addSku(Sku request) {
         checkSku4Create(request);
         request.setCreatorId(ShiroUtils.getUserId());
+        Date now = new Date();
         skuMapper.insert(request);
         if(NullUtil.hasItem(request.getBoms())){
-
+            int curVersion = vcService.increaseAndGetMasterVersion(Version.Type.sku);
+            if (NullUtil.hasItem(request.getBoms())) {
+//                try {
+                    skuBomMapper.batchInsert(request.getBoms(), request.getSkuCode(), curVersion, now, request.getCreatorId());
+//                } catch (Exception e) {
+//                    throw new RuntimeException("服务器响应中, 请勿重复提交");
+//                }
+            }
         }
     }
 

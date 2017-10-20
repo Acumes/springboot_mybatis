@@ -20,14 +20,14 @@
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
         SELECT
         <include refid="Base_Column_List" />
-        FROM user WHERE id=#{id}
+        FROM `user` WHERE id=#{id}
     </select>
 
     <select id="list" resultMap="BaseResultMap">
         select * from user
     </select>
     <insert id="insert" parameterType="com.htf.entity.User">
-        insert into USER (ID, ENGLISH_NAME,
+        insert into `user` (ID, ENGLISH_NAME,
         NICK_NAME, EMAIL, GENDER, MOBILE, REMARK,
         PHOTO, STATUS,
         CREATE_DATE, CREATOR,PASSWORD,USERNAME)
@@ -40,7 +40,7 @@
         ,#{username,jdbcType=VARCHAR})
     </insert>
     <update id="updateByPrimaryKey" parameterType="com.htf.entity.User">
-        update USER
+        update `user`
         <set>
             <if test="englishName != null">
                 ENGLISH_NAME = #{englishName,jdbcType=VARCHAR},
@@ -80,23 +80,23 @@
         where ID = #{id,jdbcType=VARCHAR}
     </update>
     <delete id="deleteByPrimaryKey">
-       DELETE  FROM USER WHERE id = #{id,jdbcType=VARCHAR}
+       DELETE  FROM `user` WHERE id = #{id,jdbcType=VARCHAR}
     </delete>
 
     <select id="findByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
         SELECT
         <include refid="Base_Column_List" />
-        FROM user WHERE username=#{username}
+        FROM `user` WHERE username=#{username}
     </select>
 
     <select id="getUserByPage" resultType="java.util.Map">
         SELECT *
-        from USER
-        WHERE USERNAME LIKE  #{searchKeyWord}
-        GROUP BY CREATE_DATE
+        from `user`
+        WHERE username LIKE  #{searchKeyWord}
+        GROUP BY create_date
     </select>
     <update id="updateUserPhoto">
-        update USER SET
+        update `user` SET
         PHOTO = #{photo,jdbcType=VARCHAR}
         where ID = #{id,jdbcType=VARCHAR}
     </update>
