@@ -15,4 +15,10 @@ public interface SkuBomMapper {
     int batchInsert(@Param("items") List<SkuBom> items, @Param("uniformSkuCode") String uniformSkuCode,
                     @Param("uniformSkuVersion") int uniformSkuVersion, @Param("uniformCrtTime") Date uniformCrtTime,
                     @Param("uniformCreator") String uniformCreator);
+
+
+    void delBomBySkuCode(@Param("skuCode") String skuCode);
+
+
+    List<SkuBom> selectByPrimaryKey(@Param("sku_code") String skuCode);
 }

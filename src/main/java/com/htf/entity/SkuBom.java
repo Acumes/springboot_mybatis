@@ -21,7 +21,6 @@ public class SkuBom implements Serializable {
     private String comment;
     private Integer skuVersion;
     private Date crtTime;
-    private String creatorName;
     private String creatorId;
 
     public String getSkuCode() {
@@ -96,14 +95,6 @@ public class SkuBom implements Serializable {
         this.crtTime = crtTime;
     }
 
-    public String getCreatorName() {
-        return creatorName;
-    }
-
-    public void setCreatorName(String creatorName) {
-        this.creatorName = creatorName;
-    }
-
     public String getCreatorId() {
         return creatorId;
     }
@@ -111,4 +102,5 @@ public class SkuBom implements Serializable {
     public void setCreatorId(String creatorId) {
         this.creatorId = creatorId;
     }
+
 }

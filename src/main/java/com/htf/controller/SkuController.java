@@ -4,12 +4,15 @@ import com.htf.controller.request.UserRequest;
 import com.htf.controller.response.UserResponse;
 import com.htf.entity.Sku;
 import com.htf.service.SkuService;
+import com.htf.util.ShiroUtils;
 import com.htf.util.UUIDGenerator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * Created by PC-FENG on 2017/8/24.
@@ -38,8 +41,12 @@ public class SkuController {
     @ApiOperation(value = "修改SKU",notes = "根据请求参数修改SKU")
     @RequestMapping(value = "",method = RequestMethod.PUT)
     public void updateUser(@RequestBody Sku request){
+        request.setModifierId(ShiroUtils.getUserId());
+        request.setModifierName(ShiroUtils.getUser().getNickName());
+        request.setModifyTime(new Date());
         skuService.updateSku(request);
     }
+
     @RequestMapping(value = "/{code}",method = RequestMethod.DELETE)
     @ApiOperation(value = "根据ID删除用户",notes = "传递用户ID")
     @ApiImplicitParam(value = "code",required = true,dataType = "string")

@@ -4,6 +4,11 @@
     <!--开启二级缓存-->
     <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
         <!--根据id查询用户详情-->
+    <resultMap id="skuBomResult" type="com.htf.entity.SkuBom" autoMapping="true" >
+        <association property="bomSku" javaType="com.htf.entity.Sku"
+                     autoMapping="true" >
+        </association>
+    </resultMap>
     <sql id="Base_Column_List" >
             sku_code as skuCode,
 			name as name,
@@ -23,12 +28,37 @@
 			create_time as createTime,
 			creator as creatorId
     </sql>
-    <!--根据id查询用户详情-->
-    <select id="selectByPrimaryKey" parameterType="string" resultType="com.htf.entity.Sku">
+
+    <sql id="baseSelect">
+        sb.sku_code AS skuCode,
+		sb.bom_sku_code AS `bomSku.skuCode`,
+		bom_sku.NAME AS `bomSku.name`,
+		bom_sku.piffer AS `bomSku.piffer`,
+		bom_sku.NAME AS `bomSku.name`,
+		bom_sku.HAS_BOM_STATUS AS `bomSku.hasBom`,
+		sb.qty AS qty,
+		sb.qty_denominator AS qtyDenominator,
+		sb.WASTE_RATE AS wasteRate,
+		sb.is_deleted_record AS isDeletedRecord,
+		sb.COMMENT AS COMMENT,
+		sb.sku_version AS skuVersion,
+		sb.CREATE_DATE AS crtTime,
+		sb.creator AS creatorId,
+		pui_crt.nick_name AS creatorName
+	    FROM
+		 sku_bom sb
+		LEFT JOIN
+		 sku bom_sku on sb.sku_code = bom_sku.sku_code
+		 LEFT JOIN `USER` pui_crt ON sb.CREATOR = pui_crt.id
+    </sql>
+
+
+    <select id="selectByPrimaryKey" resultMap="skuBomResult" parameterType="java.lang.String" >
         SELECT 
-        <include refid="Base_Column_List" />
-        FROM sku WHERE sku_code=#{sku_code}
+        <include refid="baseSelect" />
+        WHERE sb.sku_code=#{sku_code}
     </select>
+
     <update id="updateByPrimaryKey" parameterType="com.htf.entity.Sku">
         update SKU
         <set>
@@ -80,4 +110,7 @@
             #{uniformCrtTime}, #{uniformCreator})
         </foreach>
     </insert>
+    <delete id="delBomBySkuCode">
+        DELETE FROM sku_bom WHERE sku_code = #{skuCode}
+    </delete>
 </mapper>
